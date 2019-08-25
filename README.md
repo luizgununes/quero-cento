@@ -1,7 +1,5 @@
 # Projeto de Engenharia de Software - 2019
 
-**QueroCento**
-
 **Objetivo do Projeto**
 --------------------------
 Desenvolver uma aplicação que tenha como objetivo aproximar salgadeiros e confeiteiros de seus clientes finais.
