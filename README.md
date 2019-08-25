@@ -1,8 +1,6 @@
 # Projeto de Engenharia de Software - 2019
 
-**Nome do Projeto**
---------------------------
-QueroCento - 
+**QueroCento**
 
 **Objetivo do Projeto**
 --------------------------
