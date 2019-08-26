@@ -15,6 +15,6 @@ Através de uma plataforma mobile, será possivel realizar o cadastro de doces e
 
 **Arquitetura**
 --------------------------
-* __Back-end:__ Node.js V.10
+* __Back-end:__ .NET Core 2.2
 * __Front-end:__ React Native V.0.60
 * __Deploy:__ Heroku Platform
