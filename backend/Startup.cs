@@ -32,7 +32,7 @@ namespace queroCento_BE
             MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:Database").Value;
             MongoDbContext.IsSSL = Convert.ToBoolean(this.Configuration.GetSection("MongoConnection:IsSSL").Value);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            MongoDbContext mongo = new MongoDbContext();
             services.AddDbContext<queroCentoBEContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("queroCentoBEContext")));
         }

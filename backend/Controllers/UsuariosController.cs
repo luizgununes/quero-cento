@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
+using queroCentoBE.Model.Context;
 using queroCentoBE.Model.Entities;
 using queroCentoBE.Models;
 
@@ -14,9 +16,9 @@ namespace queroCentoBE.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        private readonly queroCentoBEContext _context;
+        private readonly MongoDbContext _context;
 
-        public UsuariosController(queroCentoBEContext context)
+        public UsuariosController(MongoDbContext context)
         {
             _context = context;
         }
@@ -25,7 +27,7 @@ namespace queroCentoBE.Controllers
         [HttpGet]
         public IEnumerable<Usuario> GetUsuario()
         {
-            return _context.Usuario;
+            return _context.Usuario.Find(c => true).ToList();
         }
 
         // GET: api/Usuarios/5
@@ -37,7 +39,7 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            var usuario = await _context.Usuario.FindAsync(id);
+            var usuario = await _context.Usuario.FindAsync<Usuario>(id);
 
             if (usuario == null)
             {
@@ -61,11 +63,9 @@ namespace queroCentoBE.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(usuario).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                await _context.Usuario.InsertOneAsync(usuario);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -91,8 +91,7 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Usuario.Add(usuario);
-            await _context.SaveChangesAsync();
+            
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
@@ -112,15 +111,14 @@ namespace queroCentoBE.Controllers
                 return NotFound();
             }
 
-            _context.Usuario.Remove(usuario);
-            await _context.SaveChangesAsync();
+            _context.Usuario.FindOneAndDelete<Usuario>(m=> m.Id == id);
 
             return Ok(usuario);
         }
 
         private bool UsuarioExists(string id)
         {
-            return _context.Usuario.Any(e => e.Id == id);
+            return _context.Usuario.Find(e => e.Id == id).Any();
         }
     }
 }
