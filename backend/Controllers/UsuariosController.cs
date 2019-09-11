@@ -39,14 +39,14 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            var usuario = await _context.Usuario.FindAsync(id);
+            var usuario = _context.Usuario.Find(x => x.Id == new ObjectId(id)).FirstOrDefault<Usuario>();
 
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            return Ok(usuario);
+            return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario); 
         }
 
         // PUT: api/Usuarios/
