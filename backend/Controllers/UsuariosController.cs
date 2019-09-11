@@ -5,27 +5,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using queroCentoBE.Model;
 using queroCentoBE.Model.Entities;
-using queroCentoBE.Models;
 
 namespace queroCentoBE.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class UsuariosController : Controller
     {
-        private readonly queroCentoBEContext _context;
+        private readonly MongoDbContext _context;
 
-        public UsuariosController(queroCentoBEContext context)
+        public UsuariosController()
         {
-            _context = context;
+            _context = new MongoDbContext();
         }
 
         // GET: api/Usuarios
         [HttpGet]
         public IEnumerable<Usuario> GetUsuario()
         {
-            return _context.Usuario;
+            return _context.Usuario.Find(m => true).ToList<Usuario>();
         }
 
         // GET: api/Usuarios/5
@@ -47,36 +49,21 @@ namespace queroCentoBE.Controllers
             return Ok(usuario);
         }
 
-        // PUT: api/Usuarios/5
+        // PUT: api/Usuarios/
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsuario([FromRoute] string id, [FromBody] Usuario usuario)
+        public async Task<IActionResult> PutUsuario([FromBody] Usuario usuario)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            if (id != usuario.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(usuario).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
+                _context.Usuario.InsertOne(usuario);
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UsuarioExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
                     throw;
-                }
             }
 
             return NoContent();
@@ -91,8 +78,7 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Usuario.Add(usuario);
-            await _context.SaveChangesAsync();
+            _context.Usuario.ReplaceOne(x => x.Id == usuario.Id, usuario);
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
@@ -105,22 +91,19 @@ namespace queroCentoBE.Controllers
             {
                 return BadRequest(ModelState);
             }
-
-            var usuario = await _context.Usuario.FindAsync(id);
-            if (usuario == null)
+            if (!UsuarioExists(id))
             {
                 return NotFound();
             }
+            _context.Usuario.DeleteOne(x=>x.Id== new ObjectId(id));
+  
 
-            _context.Usuario.Remove(usuario);
-            await _context.SaveChangesAsync();
-
-            return Ok(usuario);
+            return CreatedAtAction("GetUsuario",null);
         }
 
         private bool UsuarioExists(string id)
         {
-            return _context.Usuario.Any(e => e.Id == id);
+            return _context.Usuario.Find(x=>x.Id == new ObjectId(id)).Any();
         }
     }
 }

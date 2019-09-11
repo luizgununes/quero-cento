@@ -11,8 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using queroCentoBE.Models;
-using queroCentoBE.Model.Context;
+using queroCentoBE.Model;
 
 namespace queroCento_BE
 {
@@ -32,9 +31,6 @@ namespace queroCento_BE
             MongoDbContext.DatabaseName = Configuration.GetSection("MongoConnection:Database").Value;
             MongoDbContext.IsSSL = Convert.ToBoolean(this.Configuration.GetSection("MongoConnection:IsSSL").Value);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddDbContext<queroCentoBEContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("queroCentoBEContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
