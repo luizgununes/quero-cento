@@ -13,6 +13,9 @@ using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using queroCentoBE.Models;
 using queroCentoBE.Model.Context;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace queroCento_BE
 {
@@ -48,9 +51,21 @@ namespace queroCento_BE
             {
                 app.UseHsts();
             }
+                
+//            app.UseStaticFiles();
 
+//            app.UseStaticFiles(new StaticFileOptions
+//            {
+//                FileProvider = new PhysicalFileProvider(
+//                Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot"))
+//,
+//                RequestPath = new PathString("/wwwroot")
+//            });
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseMvc(routes =>
+                routes.MapRoute("default", "{controller=Main}/{action=Index}/")
+            );
+
         }
     }
 }
