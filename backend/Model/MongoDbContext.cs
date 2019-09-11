@@ -2,7 +2,7 @@
 using queroCentoBE.Model.Entities;
 using System;
 
-namespace queroCentoBE.Model.Context
+namespace queroCentoBE.Model
 {
     public class MongoDbContext
     {
