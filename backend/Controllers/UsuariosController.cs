@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace queroCentoBE.Controllers
         }
 
         // GET: api/Usuarios
+        [Authorize("Bearer")]
         [HttpGet]
         public IEnumerable<Usuario> GetUsuario()
         {
@@ -31,6 +33,7 @@ namespace queroCentoBE.Controllers
         }
 
         // GET: api/Usuarios/5
+        [Authorize("Bearer")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUsuario([FromRoute] string id)
         {
@@ -50,6 +53,7 @@ namespace queroCentoBE.Controllers
         }
 
         // PUT: api/Usuarios/
+        [Authorize("Bearer")]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario([FromBody] Usuario usuario)
         {
@@ -70,6 +74,7 @@ namespace queroCentoBE.Controllers
         }
 
         // POST: api/Usuarios
+        [Authorize("Bearer")]
         [HttpPost]
         public async Task<IActionResult> PostUsuario([FromBody] Usuario usuario)
         {
@@ -84,6 +89,7 @@ namespace queroCentoBE.Controllers
         }
 
         // DELETE: api/Usuarios/5
+        [Authorize("Bearer")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario([FromRoute] string id)
         {

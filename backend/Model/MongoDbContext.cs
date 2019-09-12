@@ -37,5 +37,12 @@ namespace queroCentoBE.Model
                 return _database.GetCollection<Usuario>("Usuario");
             }
         }
+        public IMongoCollection<UsuarioJWT> UsuarioJWT
+        {
+            get
+            {
+                return _database.GetCollection<UsuarioJWT>("UsuarioJWT");
+            }
+        }
     }
 }
