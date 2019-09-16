@@ -16,7 +16,7 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar color="dark">
-    <ion-searchbar [(ngModel)]="searchKey"></ion-searchbar>
+    <ion-searchbar placeholder="buscar" [(ngModel)]="searchKey"></ion-searchbar>
     <ion-buttons slot="end">
       <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
         <ion-icon name="options"></ion-icon>
@@ -30,7 +30,7 @@
     <ion-item lines="none" color="medium">
       <ion-label>
         <h2 no-margin class="fw500 no-margin">
-          <ion-text color="dark">Alert / Toast test</ion-text>
+          <ion-text color="dark">TESTE</ion-text>
         </h2>
 
         <p class="text-11x no-margin">
@@ -38,7 +38,7 @@
         </p>
       </ion-label>
       <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
-        Location
+        localização
         <ion-icon name="locate"></ion-icon>
       </ion-button>
     </ion-item>
@@ -47,12 +47,12 @@
   <ion-card class="bg-white">
     <ion-img [src]="themeCover"></ion-img>
     <ion-button expand="full" color="dark" (click)="presentImage(themeCover)" no-margin>
-      Modal 1: Modal Image
+      Salgados
     </ion-button>
   </ion-card>
 
-  <ion-button margin shape="round" expand="full" color="secondary" (click)="searchFilter()">
-    Modal 2: Search Filter
+  <ion-button margin shape="round" expand="full" color="secondary" (click)="telaDoces()">
+    Doces
   </ion-button>
   
   <popmenu></popmenu>

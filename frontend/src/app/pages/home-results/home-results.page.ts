@@ -18,8 +18,8 @@ import { NotificationsComponent } from './../../components/notifications/notific
 })
 export class HomeResultsPage {
   searchKey = '';
-  yourLocation = '123 Test Street';
-  themeCover = 'assets/img/ionic4-Start-Theme-cover.jpg';
+  yourLocation = 'PROJAC, RJ';
+  themeCover = 'assets/img/salgados.jpg';
 
   constructor(
     public navCtrl: NavController,
@@ -55,7 +55,7 @@ export class HomeResultsPage {
         {
           text: 'cancelar',
           handler: data => {
-            console.log('Cancel clicked');
+            console.log('cancelado');
           }
         },
         {

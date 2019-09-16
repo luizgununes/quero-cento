@@ -27,10 +27,13 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.0.0",
     "@ionic/pro": "2.0.4",
+    "@ionic/storage": "^2.2.0",
     "cordova-ios": "5.0.1",
     "core-js": "^2.5.4",
     "grunt": "^1.0.4",
+    "ionic": "^5.2.7",
     "ionicons": "4.5.5",
+    "node-rest-client": "^3.1.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.29"
   },

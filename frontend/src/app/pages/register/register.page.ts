@@ -24,7 +24,7 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
     this.onRegisterForm = this.formBuilder.group({
       'fullName': [null, Validators.compose([
-        Validators.required
+      Validators.required
       ])],
       'email': [null, Validators.compose([
         Validators.required
@@ -38,6 +38,7 @@ export class RegisterPage implements OnInit {
   async signUp() {
     const loader = await this.loadingCtrl.create({
       duration: 2000
+      
     });
 
     loader.present();
@@ -46,7 +47,6 @@ export class RegisterPage implements OnInit {
     });
   }
 
-  // // //
   goToLogin() {
     this.navCtrl.navigateRoot('/');
   }

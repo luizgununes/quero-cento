@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, LoadingController, ToastController } from '@ionic/angular';
 
-
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.page.html',
