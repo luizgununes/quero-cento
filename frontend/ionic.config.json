@@ -1,0 +1,8 @@
+{
+  "name": "querocento",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "3fff720e"
+}

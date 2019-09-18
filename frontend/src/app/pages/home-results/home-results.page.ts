@@ -1,0 +1,106 @@
+import { Component } from '@angular/core';
+import {
+  NavController,
+  AlertController,
+  MenuController,
+  ToastController,
+  PopoverController,
+  ModalController } from '@ionic/angular';
+
+import { SearchFilterPage } from '../../pages/modal/search-filter/search-filter.page';
+import { ImagePage } from './../modal/image/image.page';
+import { NotificationsComponent } from './../../components/notifications/notifications.component';
+
+@Component({
+  selector: 'app-home-results',
+  templateUrl: './home-results.page.html',
+  styleUrls: ['./home-results.page.scss']
+})
+export class HomeResultsPage {
+  searchKey = '';
+  yourLocation = 'PROJAC, RJ';
+  themeCover = 'assets/img/salgados.jpg';
+
+  constructor(
+    public navCtrl: NavController,
+    public menuCtrl: MenuController,
+    public popoverCtrl: PopoverController,
+    public alertCtrl: AlertController,
+    public modalCtrl: ModalController,
+    public toastCtrl: ToastController
+  ) {
+
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true);
+  }
+
+  settings() {
+    this.navCtrl.navigateForward('settings');
+  }
+
+  async alertLocation() {
+    const changeLocation = await this.alertCtrl.create({
+      header: 'trocar localização',
+      message: 'insira seu endereço.',
+      inputs: [
+        {
+          name: 'location',
+          placeholder: 'insira a nova localização',
+          type: 'text'
+        },
+      ],
+      buttons: [
+        {
+          text: 'cancelar',
+          handler: data => {
+            console.log('cancelado');
+          }
+        },
+        {
+          text: 'alterar',
+          handler: async (data) => {
+            this.yourLocation = data.location;
+            const toast = await this.toastCtrl.create({
+              message: 'localização atualizada com sucesso!',
+              duration: 3000,
+              position: 'top',
+              closeButtonText: 'ok',
+              showCloseButton: true
+            });
+
+            toast.present();
+          }
+        }
+      ]
+    });
+    changeLocation.present();
+  }
+
+  async searchFilter () {
+    const modal = await this.modalCtrl.create({
+      component: SearchFilterPage
+    });
+    return await modal.present();
+  }
+
+  async presentImage(image: any) {
+    const modal = await this.modalCtrl.create({
+      component: ImagePage,
+      componentProps: { value: image }
+    });
+    return await modal.present();
+  }
+
+  async notifications(ev: any) {
+    const popover = await this.popoverCtrl.create({
+      component: NotificationsComponent,
+      event: ev,
+      animated: true,
+      showBackdrop: true
+    });
+    return await popover.present();
+  }
+
+}

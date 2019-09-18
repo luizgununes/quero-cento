@@ -1,0 +1,31 @@
+:host {
+    ion-content {
+        --background: white;
+    }
+}
+
+.paz {
+    position: relative;
+    z-index: 10;
+}
+
+ .formasLogin {
+     justify-content: center;
+ }
+
+ .placeholder {
+     color: black !important;
+ }
+
+ .logo {
+     width: 60% !important;
+ }
+
+ .botaofacebook {
+     height: 120%;
+     width: 80%;
+ }
+
+ #botao-entrar {
+    --background: #fdcb3d;
+ }
