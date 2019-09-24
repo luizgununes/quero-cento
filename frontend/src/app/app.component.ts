@@ -29,17 +29,28 @@ export class AppComponent {
         icon: 'home'
       },
       {
-        title: 'sobre',
+        title: 'meu perfil',
+        url: '/edit-profile',
+        direct: 'forward',
+        icon: 'contact'
+      },
+      {
+        title: 'sobre o app',
         url: '/about',
         direct: 'forward',
         icon: 'information-circle-outline'
       },
-
       {
         title: 'configurações',
         url: '/settings',
         direct: 'forward',
         icon: 'cog'
+      },
+      {
+        title: 'sair',
+        url: '',
+        direct: 'forward',
+        icon: 'log-out'
       }
     ];
 
@@ -50,7 +61,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-    }).catch(() => {});
+    }).catch(() => { });
   }
 
   goToEditProgile() {

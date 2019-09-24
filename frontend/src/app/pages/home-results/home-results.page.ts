@@ -18,8 +18,8 @@ import { NotificationsComponent } from './../../components/notifications/notific
 })
 export class HomeResultsPage {
   searchKey = '';
-  yourLocation = 'PROJAC, RJ';
-  themeCover = 'assets/img/salgados.jpg';
+  salgados = 'assets/img/salgados.jpg';
+  doces = 'assets/img/doces.jpg';
 
   constructor(
     public navCtrl: NavController,
@@ -38,44 +38,6 @@ export class HomeResultsPage {
 
   settings() {
     this.navCtrl.navigateForward('settings');
-  }
-
-  async alertLocation() {
-    const changeLocation = await this.alertCtrl.create({
-      header: 'trocar localização',
-      message: 'insira seu endereço.',
-      inputs: [
-        {
-          name: 'location',
-          placeholder: 'insira a nova localização',
-          type: 'text'
-        },
-      ],
-      buttons: [
-        {
-          text: 'cancelar',
-          handler: data => {
-            console.log('cancelado');
-          }
-        },
-        {
-          text: 'alterar',
-          handler: async (data) => {
-            this.yourLocation = data.location;
-            const toast = await this.toastCtrl.create({
-              message: 'localização atualizada com sucesso!',
-              duration: 3000,
-              position: 'top',
-              closeButtonText: 'ok',
-              showCloseButton: true
-            });
-
-            toast.present();
-          }
-        }
-      ]
-    });
-    changeLocation.present();
   }
 
   async searchFilter () {
