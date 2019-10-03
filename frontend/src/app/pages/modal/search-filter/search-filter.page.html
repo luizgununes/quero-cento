@@ -1,13 +1,10 @@
 <ion-header>
-	<ion-toolbar color="primary">
+	<ion-toolbar color="tertiary">
 		<ion-buttons slot="start">
-			<ion-button color="primary" (click)="closeModal()">
-				<ion-icon name="voltar" color="light"></ion-icon>
+			<ion-button size="small" shape="round" (click)="closeModal()" color="light">
+				<ion-icon slot="start" name="close"></ion-icon> voltar
 			</ion-button>
 		</ion-buttons>
-		<ion-title>
-			filtrar resultados
-		</ion-title>
 	</ion-toolbar>
 </ion-header>
 
@@ -34,14 +31,14 @@
 	<ion-item margin-bottom>
 		<ion-label class="no-margin-bottom">
 			<ion-text color="dark" class="fw500">preço min/max:</ion-text>
+			<br />
 		</ion-label>
-
 		<ion-range dualKnobs="true" [(ngModel)]="minmaxprice" min="10" max="1000" step="10" class="no-padding-top">
 			<ion-label slot="start">
-				<ion-text color="primary">$ {{minmaxprice.lower}}</ion-text>
+				<ion-text color="primary">R$ {{minmaxprice.lower}}</ion-text>
 			</ion-label>
 			<ion-label slot="end">
-				<ion-text color="primary">$ {{minmaxprice.upper}}</ion-text>
+				<ion-text color="primary">R$ {{minmaxprice.upper}}</ion-text>
 			</ion-label>
 		</ion-range>
 	</ion-item>
