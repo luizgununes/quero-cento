@@ -42,19 +42,19 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            var usuario = _context.Usuario.Find(x => x.Id == new ObjectId(id)).FirstOrDefault<Usuario>();
+            var usuario =  _context.Usuario.Find(x => x.Id == new ObjectId(id)).FirstOrDefault<Usuario>();
 
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario); 
+            return AcceptedAtAction("GetUsuario", new { id = usuario.Id }, usuario); 
         }
 
         // PUT: api/Usuarios/
         [Authorize("Bearer")]
-        [HttpPut("{id}")]
+        [HttpPut]
         public async Task<IActionResult> PutUsuario([FromBody] Usuario usuario)
         {
             if (!ModelState.IsValid)
@@ -70,7 +70,7 @@ namespace queroCentoBE.Controllers
                     throw;
             }
 
-            return NoContent();
+            return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
 
         // POST: api/Usuarios
@@ -97,19 +97,16 @@ namespace queroCentoBE.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if (!UsuarioExists(id))
+            if (!Util.UsuarioExists(_context,id))
             {
                 return NotFound();
             }
             _context.Usuario.DeleteOne(x=>x.Id== new ObjectId(id));
   
 
-            return CreatedAtAction("GetUsuario",null);
+            return AcceptedAtAction("GetUsuario",null);
         }
 
-        private bool UsuarioExists(string id)
-        {
-            return _context.Usuario.Find(x=>x.Id == new ObjectId(id)).Any();
-        }
+
     }
 }

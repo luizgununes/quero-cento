@@ -1,13 +1,8 @@
-using Microsoft.Exchange.WebServices.Data;
 using Newtonsoft.Json;
-using queroCentoBE.Controllers;
 using System;
-using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using Xunit;
-using NPOI.SS.Formula.Functions;
 namespace queroCentoBETestes
 {
     public class UnitTest
@@ -75,10 +70,10 @@ namespace queroCentoBETestes
                 username = "faustao",
                 password = "olocomeuolocomeuolocomeu"
             };
-             uri = new Uri(URL_API+"/Usuarios/");
+             uri = new Uri(URL_API+"api/Usuarios/");
              data = JsonConvert.SerializeObject(body);
             
-            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post,uri);
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Put,uri);
             req.Headers.TryAddWithoutValidation("Content-Type","application/json");
             req.Headers.TryAddWithoutValidation("Authorization", token);
             response = await client.SendAsync(req);
