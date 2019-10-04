@@ -1,60 +1,46 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
-      <ion-menu-button color="secondary"></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
     <ion-title>
         <ion-text color="light">
           <ion-text color="light" class="fw700">Quero Cento</ion-text>
         </ion-text>
     </ion-title>
-    <ion-buttons slot="end">
-      <ion-button size="small" shape="round" color="medium" (click)="notifications()">
-        <ion-icon name="notifications"></ion-icon>
-        <ion-badge color="dark" slot="end">2</ion-badge>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
-  <ion-toolbar color="dark">
-    <ion-searchbar placeholder="buscar" [(ngModel)]="searchKey"></ion-searchbar>
+  <ion-toolbar color="tertiary">
+    <ion-searchbar id="barraBusca" placeholder="buscar" [(ngModel)]="searchKey"></ion-searchbar>
     <ion-buttons slot="end">
-      <ion-button size="small" shape="round" color="medium" (click)="searchFilter()">
+      <ion-button size="small" shape="round" color="light" (click)="searchFilter()">
         <ion-icon name="options"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card no-margin class="no-radius">
-    <ion-item lines="none" color="medium">
-      <ion-label>
-        <h2 no-margin class="fw500 no-margin">
-          <ion-text color="dark">TESTE</ion-text>
-        </h2>
-
-        <p class="text-11x no-margin">
-          <ion-text  color="primary">{{yourLocation}}</ion-text>
-        </p>
-      </ion-label>
-      <ion-button shape="round" fill="outline" size="small" color="primary" (click)="alertLocation()">
-        localização
-        <ion-icon name="locate"></ion-icon>
-      </ion-button>
-    </ion-item>
+<ion-content id="cardGeral">
+  <ion-card id="cardHome" class=bg-white>
+    <ion-title>
+      <ion-text color="dark">
+        <ion-text style="font-size: 15px" color="dark" class="fw700">o que você vai querer hoje?</ion-text>
+      </ion-text>
+    </ion-title>
   </ion-card>
 
   <ion-card class="bg-white">
-    <ion-img [src]="themeCover"></ion-img>
-    <ion-button expand="full" color="dark" (click)="presentImage(themeCover)" no-margin>
+    <ion-img [src]="salgados"></ion-img>
+    <ion-button expand="full" color="tertiary" (click)="presentImage(salgados)" no-margin>
       Salgados
     </ion-button>
   </ion-card>
+  <ion-card class="bg-white">
+    <ion-img [src]="doces"></ion-img>
+    <ion-button expand="full" color="secondary" (click)="presentImage(doces)" no-margin>
+      Doces
+    </ion-button>
+  </ion-card>
 
-  <ion-button margin shape="round" expand="full" color="secondary" (click)="telaDoces()">
-    Doces
-  </ion-button>
-  
   <popmenu></popmenu>
 </ion-content>
   

@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
   async forgotPass() {
     const alert = await this.alertCtrl.create({
       header: 'esqueceu a senha?',
-      message: 'insira seu e-mail que enviaremos um link para você! ;)',
+      message: 'insira seu e-mail que enviaremos um link para você!',
       inputs: [
         {
           name: 'email',
