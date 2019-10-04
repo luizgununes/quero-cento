@@ -7,11 +7,15 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using Xunit;
-
+using NPOI.SS.Formula.Functions;
 namespace queroCentoBETestes
 {
-    public class UnitTest1
+    public class UnitTest
     {
+        const string URL_API = "http://localhost/api/";
+        const string URL_TOKEN = URL_API + "api/Loginapi/";
+        
+        string token;
         [Fact]
         //Esperado -> erro na autenticação
         public async void TestTokenDeAcessoIncorreto()
@@ -22,15 +26,14 @@ namespace queroCentoBETestes
             userid = "teste",
             accesskey = ""
         };
-        string url = "http://localhost/api/api/LoginApi/";
-        var uri = new Uri(url);
+        var uri = new Uri(URL_TOKEN);
         var data = JsonConvert.SerializeObject(body);
         var content = new StringContent(data, Encoding.UTF8, "application/json");
         HttpResponseMessage response = null;
         response = await client.PostAsync(uri, content);
         Assert.Contains("Falha ao autenticar", response.Content.ReadAsStringAsync().Result.ToString());
         }
-    [Fact]
+        [Fact]
         public async void TestTokenDeAcessoLoginCorreto()
         {
             HttpClient client = new HttpClient();
@@ -39,13 +42,46 @@ namespace queroCentoBETestes
                 userid = "faustao",
                 accesskey = "olocomeuolocomeuolocomeu"
             };
-            string url = "http://localhost/api/api/LoginApi/";
-            var uri = new Uri(url);
+            var uri = new Uri(URL_TOKEN);
             var data = JsonConvert.SerializeObject(body);
             var content = new StringContent(data, Encoding.UTF8, "application/json");
             HttpResponseMessage response = null;
             response = await client.PostAsync(uri, content);
-            Assert.Contains("OK", response.Content.ReadAsStringAsync().Result.ToString());
+            string json = response.Content.ReadAsStringAsync().Result;
+            dynamic it = JsonConvert.DeserializeObject(json);
+            token = "Bearer "+ it.accessToken;
+            Assert.Contains("OK", it.message);
+        }
+        [Fact]
+        public async void TestCriacaoUsuario()
+        {
+            HttpClient client = new HttpClient();
+            var body1 = new
+            {
+                userid = "faustao",
+                accesskey = "olocomeuolocomeuolocomeu"
+            };
+            var uri = new Uri(URL_TOKEN);
+            var data = JsonConvert.SerializeObject(body1);
+            var content = new StringContent(data, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = null;
+            response = await client.PostAsync(uri, content);
+            string json = response.Content.ReadAsStringAsync().Result;
+            dynamic it = JsonConvert.DeserializeObject(json);
+            token = "Bearer " + it.accessToken;
+            
+             var body = new
+            {
+                username = "faustao",
+                password = "olocomeuolocomeuolocomeu"
+            };
+             uri = new Uri(URL_API+"/Usuarios/");
+             data = JsonConvert.SerializeObject(body);
+            
+            HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post,uri);
+            req.Headers.TryAddWithoutValidation("Content-Type","application/json");
+            req.Headers.TryAddWithoutValidation("Authorization", token);
+            response = await client.SendAsync(req);
         }
     }
 }
