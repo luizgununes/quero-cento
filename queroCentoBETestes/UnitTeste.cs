@@ -20,10 +20,11 @@ namespace queroCentoBETestes
         public async void TestTokenDeAcessoIncorreto()
         {
             //JSON PARA RESGATAR TOKEN
-            var bodyToken = (
-                userid: "faustao",
-                accesskey: ""
-            );
+            var bodyToken = new
+            {
+                userid = "faustao",
+                accesskey = ""
+            };
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, new Uri(URL_TOKEN))
             {
                 Content = new StringContent(JsonConvert.SerializeObject(bodyToken), Encoding.UTF8, "application/json")
@@ -38,10 +39,10 @@ namespace queroCentoBETestes
         public async void TestTokenDeAcessoLoginCorreto()
         {
             //JSON PARA RESGATAR TOKEN
-            var bodyToken = (
-                userid: "faustao",
-                accesskey: "olocomeuolocomeuolocomeu"
-            );
+            var bodyToken = new {
+                userid = "faustao",
+                accesskey = "olocomeuolocomeuolocomeu"
+            };
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, new Uri(URL_TOKEN));
             req.Content = new StringContent(JsonConvert.SerializeObject(bodyToken), Encoding.UTF8, "application/json");
             //FAZ REQUISIÇÃO
@@ -54,10 +55,11 @@ namespace queroCentoBETestes
         public async void TestCriacaoUsuario()
         {
             //JSON PARA RESGATAR TOKEN
-            var bodyToken = (
-                userid: "faustao",
-                accesskey: "olocomeuolocomeuolocomeu"
-            );
+            var bodyToken = new
+            {
+                userid = "faustao",
+                accesskey = "olocomeuolocomeuolocomeu"
+            };
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, new Uri(URL_TOKEN))
             {
                 Content = new StringContent(JsonConvert.SerializeObject(bodyToken), Encoding.UTF8, "application/json")
@@ -66,10 +68,11 @@ namespace queroCentoBETestes
             var response = await new HttpClient().SendAsync(req);
             dynamic it = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
             token = "Bearer " + it.accessToken;
-            var body = (
-                username: "TesteCriacaoUsuario",
-                password: "teste"
-            );
+            var body = new
+            {
+                username = "TesteCriacaoUsuario",
+                password = "teste"
+            };
             req = new HttpRequestMessage(HttpMethod.Put, new Uri(URL_API + "api/Usuarios/"));
             req.Headers.TryAddWithoutValidation("Authorization", token);
             req.Content = new StringContent(
@@ -84,10 +87,11 @@ namespace queroCentoBETestes
         public async void TestDeletarUsuario()
         {
             //JSON PARA RESGATAR TOKEN
-            var bodyToken = (
-                userid: "faustao",
-                accesskey: "olocomeuolocomeuolocomeu"
-            );
+            var bodyToken = new
+            {
+                userid = "faustao",
+                accesskey = "olocomeuolocomeuolocomeu"
+            };
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, new Uri(URL_TOKEN));
             req.Content = new StringContent(
                 JsonConvert.SerializeObject(bodyToken),
