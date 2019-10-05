@@ -5,13 +5,17 @@
 Desenvolver uma aplicação que tenha como objetivo aproximar salgadeiros e confeiteiros de seus clientes finais.
 Através de uma plataforma mobile, será possivel realizar o cadastro de doces e salgados (com valores unitários, imagens, local e horários de atendimento, promoções e agendamentos). Também como estará disponível para pessoas que buscam comprar os produtos mencionados no comentario acima.
 
- **Equipe**
- --------------------------
-  * __Erick Carli Junior:__ Analist & Designer
-  * __Luiz Gustavo Nunes:__ Front-end Developer
-  * __Luis Gabriel Kingeski:__ Back-end Developer
-  * __Muriel Lima:__ Database Administrator & Developer
-  * __Elizelton Lisboa:__ Dev-Ops & Developer
+**Painel do Projeto**
+https://trello.com/b/5R69tW2d/projeto-engenharia-de-software
+--------------------------
+ 
+**Equipe**
+--------------------------
+ * __Erick Carli Junior:__ Analist & Designer
+ * __Luiz Gustavo Nunes:__ Front-end Developer
+ * __Luis Gabriel Kingeski:__ Back-end Developer
+ * __Muriel Lima:__ Database Administrator & Developer
+ * __Elizelton Lisboa:__ Dev-Ops & Developer
 
 **Arquitetura**
 --------------------------
