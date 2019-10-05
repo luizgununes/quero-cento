@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver.GeoJsonObjectModel;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 
 namespace queroCentoBE.Model.Entities
@@ -9,7 +10,8 @@ namespace queroCentoBE.Model.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId Id { get; set; }
+        [JsonProperty(PropertyName = "Id")]
+        public string Id { get; set; }
 
         public string Username { get; set; }
         public string Password { get; set; }
