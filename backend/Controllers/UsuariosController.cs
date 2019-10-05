@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using queroCentoBE.Model;
 using queroCentoBE.Model.Entities;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace queroCentoBE.Controllers
 {
@@ -18,6 +15,8 @@ namespace queroCentoBE.Controllers
     public class UsuariosController : Controller
     {
         private readonly MongoDbContext _context;
+
+        public MongoDbContext Context => _context;
 
         public UsuariosController()
         {
@@ -29,7 +28,7 @@ namespace queroCentoBE.Controllers
         [HttpGet]
         public IEnumerable<Usuario> GetUsuario()
         {
-            return _context.Usuario.Find(m => true).ToList<Usuario>();
+            return Context.Usuario.Find(m => true).ToList<Usuario>();
         }
 
         // GET: api/Usuarios/5
@@ -42,14 +41,14 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            var usuario =  _context.Usuario.Find(x => x.Id == id).FirstOrDefault<Usuario>();
+            var usuario = Context.Usuario.Find(x => x.Id == id).FirstOrDefault<Usuario>();
 
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            return AcceptedAtAction("GetUsuario", new { id = usuario.Id }, usuario); 
+            return AcceptedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
 
         // PUT: api/Usuarios/
@@ -63,11 +62,11 @@ namespace queroCentoBE.Controllers
             }
             try
             {
-                _context.Usuario.InsertOne(usuario);
+                Context.Usuario.InsertOne(usuario);
             }
             catch (DbUpdateConcurrencyException)
             {
-                    throw;
+                throw;
             }
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
@@ -83,7 +82,7 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            _context.Usuario.ReplaceOne(x => x.Id == usuario.Id, usuario);
+            Context.Usuario.ReplaceOne(x => x.Id == usuario.Id, usuario);
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
@@ -97,14 +96,14 @@ namespace queroCentoBE.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if (!Util.UsuarioExists(_context,id))
+            if (!Util.UsuarioExists(Context, id))
             {
                 return NotFound();
             }
-            _context.Usuario.DeleteOne(x=>x.Id== id);
-  
+            Context.Usuario.DeleteOne(x => x.Id == id);
 
-            return AcceptedAtAction("GetUsuario",null);
+
+            return AcceptedAtAction("GetUsuario", null);
         }
 
 

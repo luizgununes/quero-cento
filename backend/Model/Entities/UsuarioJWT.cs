@@ -1,8 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Driver.GeoJsonObjectModel;
-using System.Collections.Generic;
-
 namespace queroCentoBE.Model.Entities
 {
     public class UsuarioJWT
@@ -12,7 +9,6 @@ namespace queroCentoBE.Model.Entities
         public ObjectId Id { get; set; }
         public string UserID { get; set; }
         public string AccessKey { get; set; }
-
     }
     public class TokenConfigurations
     {

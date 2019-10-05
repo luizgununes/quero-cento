@@ -2,18 +2,17 @@ using Newtonsoft.Json;
 using queroCentoBE.Model.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using Xunit;
-using System.Linq;
 namespace queroCentoBETestes
 {
     public class UnitTest
     {
         const string URL_API = "http://localhost/app/";
         const string URL_TOKEN = URL_API + "api/LoginApi/";
-        
         string token;
         #region TestTokenDeAcessoIncorreto
         [Fact]
@@ -67,12 +66,10 @@ namespace queroCentoBETestes
             var response = await new HttpClient().SendAsync(req);
             dynamic it = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
             token = "Bearer " + it.accessToken;
-
             var body = (
                 username: "TesteCriacaoUsuario",
                 password: "teste"
             );
-
             req = new HttpRequestMessage(HttpMethod.Put, new Uri(URL_API + "api/Usuarios/"));
             req.Headers.TryAddWithoutValidation("Authorization", token);
             req.Content = new StringContent(
