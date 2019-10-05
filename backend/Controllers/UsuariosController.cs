@@ -42,7 +42,7 @@ namespace queroCentoBE.Controllers
                 return BadRequest(ModelState);
             }
 
-            var usuario =  _context.Usuario.Find(x => x.Id == new ObjectId(id)).FirstOrDefault<Usuario>();
+            var usuario =  _context.Usuario.Find(x => x.Id == id).FirstOrDefault<Usuario>();
 
             if (usuario == null)
             {
@@ -101,7 +101,7 @@ namespace queroCentoBE.Controllers
             {
                 return NotFound();
             }
-            _context.Usuario.DeleteOne(x=>x.Id== new ObjectId(id));
+            _context.Usuario.DeleteOne(x=>x.Id== id);
   
 
             return AcceptedAtAction("GetUsuario",null);

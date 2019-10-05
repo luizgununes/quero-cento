@@ -44,7 +44,6 @@
     },
     "IIS Local": {
       "commandName": "IIS",
-      "launchBrowser": true,
       "launchUrl": "api/Usuarios",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
