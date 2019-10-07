@@ -2,7 +2,7 @@
 <widget id="com.ionictheme.ionic4start" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>QueroCento</name>
     <description>QueroCento</description>
-    <author email="lgnunes.pessoal@gmail.com" href="https://ionictheme.com">Ionic Theme</author>
+    <author email="lgnunes.pessoal@gmail.com">Luiz Nunes</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-
 import { Platform, NavController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { Pages } from './interfaces/pages';
 
 @Component({
@@ -35,18 +33,6 @@ export class AppComponent {
         icon: 'contact'
       },
       {
-        title: 'sobre o app',
-        url: '/about',
-        direct: 'forward',
-        icon: 'information-circle-outline'
-      },
-      {
-        title: 'configurações',
-        url: '/settings',
-        direct: 'forward',
-        icon: 'cog'
-      },
-      {
         title: 'sair',
         url: '',
         direct: 'forward',
@@ -62,10 +48,6 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     }).catch(() => { });
-  }
-
-  goToEditProgile() {
-    this.navCtrl.navigateForward('edit-profile');
   }
 
   logout() {

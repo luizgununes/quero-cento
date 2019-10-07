@@ -1,6 +1,6 @@
 :host {
     ion-content {
-        --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+        --background: #6c4819;
     }
 
     ion-list {
@@ -8,4 +8,13 @@
             padding: 0;
         }
     }
+}
+
+#header-menu {
+    padding-bottom: 10px;
+}
+
+#avatar {
+    margin-left: 10px;
+    margin-right: 10px;
 }

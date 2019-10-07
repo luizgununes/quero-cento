@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
 import { LoginPage } from './login.page';
 
 const routes: Routes = [
@@ -23,4 +22,4 @@ const routes: Routes = [
   ],
   declarations: [LoginPage]
 })
-export class LoginPageModule {}
+export class LoginPageModule { }

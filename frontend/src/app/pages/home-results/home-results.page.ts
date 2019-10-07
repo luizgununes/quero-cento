@@ -9,7 +9,6 @@ import {
 
 import { SearchFilterPage } from '../../pages/modal/search-filter/search-filter.page';
 import { ImagePage } from './../modal/image/image.page';
-import { NotificationsComponent } from './../../components/notifications/notifications.component';
 
 @Component({
   selector: 'app-home-results',
@@ -18,8 +17,8 @@ import { NotificationsComponent } from './../../components/notifications/notific
 })
 export class HomeResultsPage {
   searchKey = '';
-  salgados = 'assets/img/salgados.jpg';
-  doces = 'assets/img/doces.jpg';
+  salgados = 'assets/salgado.png';
+  doces = 'assets/doce.png';
 
   constructor(
     public navCtrl: NavController,
@@ -36,10 +35,6 @@ export class HomeResultsPage {
     this.menuCtrl.enable(true);
   }
 
-  settings() {
-    this.navCtrl.navigateForward('settings');
-  }
-
   async searchFilter () {
     const modal = await this.modalCtrl.create({
       component: SearchFilterPage
@@ -53,16 +48,6 @@ export class HomeResultsPage {
       componentProps: { value: image }
     });
     return await modal.present();
-  }
-
-  async notifications(ev: any) {
-    const popover = await this.popoverCtrl.create({
-      component: NotificationsComponent,
-      event: ev,
-      animated: true,
-      showBackdrop: true
-    });
-    return await popover.present();
   }
 
 }

@@ -2,7 +2,6 @@
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
 @import '~@ionic/angular/css/typography.css';
-
 @import '~@ionic/angular/css/padding.css';
 @import '~@ionic/angular/css/float-elements.css';
 @import '~@ionic/angular/css/text-alignment.css';
@@ -107,7 +106,7 @@ ion-item {
   
   ion-toolbar {
     &.ion-color-primary {
-      --ion-color-base: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary)) !important;
+      --ion-color-base: #6c4819;
     }
   }
   
@@ -144,11 +143,11 @@ ion-item {
       margin: 0 5%;
   
       .logo {
-        width: 60px;
-        height: 60px;
+        width: 90%;
+        height: 100px;
         margin: 20px auto 8px;
         border-radius: 10%;
-        background: url("/assets/img/logo.png") no-repeat;
+        background: url("/assets/logo.png") no-repeat;
         background-size: 100%;
       }
   
