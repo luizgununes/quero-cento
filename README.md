@@ -13,7 +13,7 @@ https://trello.com/b/5R69tW2d/projeto-engenharia-de-software
 --------------------------
 https://docs.google.com/document/d/1jgpNtWMlLw0Sv3Rt9bSJHhvH1BwHKqYTsZ4h_bCqBn0/edit?usp=sharing
  
-**Heorku**
+**Heroku**
 --------------------------
 https://querocento.herokuapp.com/
  
