@@ -61,6 +61,12 @@ namespace queroCento_BE
                     .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                     .RequireAuthenticatedUser().Build());
             });
+
+            //Ativar CORS
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -77,6 +83,7 @@ namespace queroCento_BE
             app.UseMvc(routes =>
                 routes.MapRoute("default", "{controller=Main}/{action=Index}/")
             );
+            app.UseCors(options => options.AllowAnyOrigin());
         }
     }
 }
