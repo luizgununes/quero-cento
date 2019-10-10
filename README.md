@@ -6,8 +6,16 @@ Desenvolver uma aplicação que tenha como objetivo aproximar salgadeiros e conf
 Através de uma plataforma mobile, será possivel realizar o cadastro de doces e salgados (com valores unitários, imagens, local e horários de atendimento, promoções e agendamentos). Também como estará disponível para pessoas que buscam comprar os produtos mencionados no comentario acima.
 
 **Painel do Projeto**
-https://trello.com/b/5R69tW2d/projeto-engenharia-de-software
 --------------------------
+https://trello.com/b/5R69tW2d/projeto-engenharia-de-software
+
+**História dos Usuários**
+--------------------------
+https://docs.google.com/document/d/1jgpNtWMlLw0Sv3Rt9bSJHhvH1BwHKqYTsZ4h_bCqBn0/edit?usp=sharing
+ 
+**Heroku**
+--------------------------
+https://querocento.herokuapp.com/
  
 **Equipe**
 --------------------------

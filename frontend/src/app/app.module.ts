@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AuthModule } from  './auth/auth.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,11 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ImagePageModule } from './pages/modal/image/image.module';
 import { SearchFilterPageModule } from './pages/modal/search-filter/search-filter.module';
 
-import { NotificationsComponent } from './components/notifications/notifications.component';
-
-
 @NgModule({
-  declarations: [AppComponent, NotificationsComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -29,7 +25,7 @@ import { NotificationsComponent } from './components/notifications/notifications
     ImagePageModule,
     SearchFilterPageModule
   ],
-  entryComponents: [NotificationsComponent],
+  entryComponents: [],
   providers: [
     StatusBar,
     SplashScreen,
