@@ -102,7 +102,6 @@ namespace queroCentoBE.Controllers
             }
             Context.Usuario.DeleteOne(x => x.Id == id);
 
-
             return AcceptedAtAction("GetUsuario", null);
         }
 
