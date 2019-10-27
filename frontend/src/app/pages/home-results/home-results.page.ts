@@ -7,7 +7,6 @@ import {
   PopoverController,
   ModalController } from '@ionic/angular';
 
-import { SearchFilterPage } from '../../pages/modal/search-filter/search-filter.page';
 import { ImagePage } from './../modal/image/image.page';
 
 @Component({

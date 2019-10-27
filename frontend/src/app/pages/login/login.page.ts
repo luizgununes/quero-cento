@@ -37,8 +37,8 @@ export class LoginPage implements OnInit {
 
   async forgotPass() {
     const alert = await this.alertCtrl.create({
-      header: 'esqueceu a senha?',
-      message: 'insira seu e-mail que enviaremos um link para você!',
+      header: 'Esqueceu a senha?',
+      message: 'Insira seu e-mail que enviaremos uma nova senha para você!',
       inputs: [
         {
           name: 'email',
@@ -65,7 +65,7 @@ export class LoginPage implements OnInit {
             loader.onWillDismiss().then(async l => {
               const toast = await this.toastCtrl.create({
                 showCloseButton: true,
-                message: 'e-mail enviado com sucesso!',
+                message: 'Uma nova senha foi enviada para seu e-mail.',
                 duration: 3000,
                 position: 'bottom'
               });
