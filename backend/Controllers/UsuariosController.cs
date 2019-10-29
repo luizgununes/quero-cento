@@ -24,13 +24,21 @@ namespace queroCentoBE.Controllers
         }
 
         // GET: api/Usuarios
+        /// <summary>
+        /// Retorna todos os usuários cadastrados
+        /// </summary>
+        /// <returns></returns>
         [Authorize("Bearer")]
         [HttpGet]
         public IEnumerable<Usuario> GetUsuario()
         {
             return Context.Usuario.Find(m => true).ToList<Usuario>();
         }
-
+        /// <summary>
+        /// Retorna o usuário especificado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: api/Usuarios/5
         [Authorize("Bearer")]
         [HttpGet("{id}")]
@@ -50,7 +58,11 @@ namespace queroCentoBE.Controllers
 
             return AcceptedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
-
+        /// <summary>
+        /// Cadastra o usuário
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         // PUT: api/Usuarios/
         [Authorize("Bearer")]
         [HttpPut]
@@ -71,7 +83,11 @@ namespace queroCentoBE.Controllers
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
-
+        /// <summary>
+        /// Atualiza o usuário
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
         // POST: api/Usuarios
         [Authorize("Bearer")]
         [HttpPost]
@@ -86,7 +102,11 @@ namespace queroCentoBE.Controllers
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
-
+        /// <summary>
+        /// Deleta o usuário
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // DELETE: api/Usuarios/5
         [Authorize("Bearer")]
         [HttpDelete("{id}")]
