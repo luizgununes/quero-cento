@@ -21,19 +21,19 @@ export class AppComponent {
   ) {
     this.appPages = [
       {
-        title: 'início',
+        title: 'Início',
         url: '/home-results',
         direct: 'root',
         icon: 'home'
       },
       {
-        title: 'meu perfil',
+        title: 'Meu Perfil',
         url: '/edit-profile',
         direct: 'forward',
         icon: 'contact'
       },
       {
-        title: 'sair',
+        title: 'Sair',
         url: '',
         direct: 'forward',
         icon: 'log-out'

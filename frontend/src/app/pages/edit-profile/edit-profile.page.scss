@@ -4,6 +4,10 @@
   }
 }
 
+#tituloPerfil {
+  color: black;
+}
+
 .profile {
   ion-card {
     width: 100%;
@@ -11,7 +15,6 @@
     background-color: #fff;
     ion-card-content {
       padding: 32px;
-      background-color: var(--ion-color-primary);
       color: #fff;
       text-align: center;
 
@@ -19,7 +22,7 @@
         height: 128px;
         width: 128px;
         border-radius: 50%;
-        border: solid 4px #fff;
+        border: solid 4px #6c4819;
         display: inline;
         box-shadow: 0 0 28px rgba(255,255,255, .65);
       }
@@ -41,4 +44,8 @@
       margin: 0;
     }
   }
+}
+
+#seletorCidade {
+  max-width: fit-content;
 }

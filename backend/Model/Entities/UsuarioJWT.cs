@@ -1,5 +1,8 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+
 namespace queroCentoBE.Model.Entities
 {
     public class UsuarioJWT
@@ -7,7 +10,9 @@ namespace queroCentoBE.Model.Entities
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id { get; set; }
+        [Required]
         public string UserID { get; set; }
+        [Required]
         public string AccessKey { get; set; }
     }
     public class TokenConfigurations

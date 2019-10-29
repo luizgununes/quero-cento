@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ImagePageModule } from './pages/modal/image/image.module';
-import { SearchFilterPageModule } from './pages/modal/search-filter/search-filter.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,8 +21,7 @@ import { SearchFilterPageModule } from './pages/modal/search-filter/search-filte
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    ImagePageModule,
-    SearchFilterPageModule
+    ImagePageModule
   ],
   entryComponents: [],
   providers: [

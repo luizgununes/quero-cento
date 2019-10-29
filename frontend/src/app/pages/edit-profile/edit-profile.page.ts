@@ -12,7 +12,7 @@ export class EditProfilePage implements OnInit {
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController
-    ) { }
+  ) { }
 
   ngOnInit() {
   }
@@ -27,7 +27,7 @@ export class EditProfilePage implements OnInit {
       const toast = await this.toastCtrl.create({
         showCloseButton: true,
         cssClass: 'bg-profile',
-        message: 'seus dados foram alterados!',
+        message: 'Seus dados foram alterados com sucesso!',
         duration: 3000,
         position: 'bottom'
       });

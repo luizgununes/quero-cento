@@ -1,6 +1,8 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
+
 namespace queroCentoBE.Model.Entities
 {
     public class Usuario
@@ -26,7 +28,9 @@ namespace queroCentoBE.Model.Entities
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        [Required]
         public string Username { get; set; }
+        [Required]
         public string Password { get; set; }
         public string TipoUsuario { get; set; }
         public string Documento { get; set; } //Precisa validar CPF e CNPJ

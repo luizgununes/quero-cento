@@ -2,12 +2,20 @@
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
-        <ion-icon slot="start" name="close"></ion-icon> voltar
+        <ion-icon slot="start" name="close"></ion-icon>Voltar
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card id="botaoSalgado" (click)="presentImage(salgados)" class="bg-white">
+    <ion-img id="imgSalgado" [src]="salgados"></ion-img>
+  </ion-card>
+  <ion-card id="botaoSalgado" (click)="presentImage(salgados)" class="bg-white">
+    <ion-img id="imgSalgado" [src]="salgados"></ion-img>
+  </ion-card>
+  <ion-card id="botaoSalgado" (click)="presentImage(salgados)" class="bg-white">
+    <ion-img id="imgSalgado" [src]="salgados"></ion-img>
+  </ion-card>
 </ion-content>

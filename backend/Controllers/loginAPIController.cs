@@ -14,7 +14,21 @@ namespace queroCentoBE.Controllers
     [ApiController]
     public class LoginAPIController : ControllerBase
     {
-
+        /// <summary>
+        /// Criada para obter o token de acesso
+        /// </summary>
+        /// <remarks>
+        /// Example
+        /// {
+        /// "userID": "faustao",
+        /// "accessKey": "olocomeuolocomeuolocomeu"
+        /// }
+        /// </remarks>
+        /// <param name="usuario"></param>
+        /// <param name="usersDAO"></param>
+        /// <param name="signingConfigurations"></param>
+        /// <param name="tokenConfigurations"></param>
+        /// <returns></returns>
         [AllowAnonymous]
         [HttpPost]
         public object Post(
