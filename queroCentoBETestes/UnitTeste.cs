@@ -11,8 +11,8 @@ namespace queroCentoBETestes
 {
     public class UnitTest
     {
-        const string URL_API = "http://localhost/app/";
-        const string URL_TOKEN = URL_API + "api/LoginApi/";
+        const string URL_API = "http://localhost/api";
+        const string URL_TOKEN = URL_API + "/LoginApi/";
         string token;
         #region TestTokenDeAcessoIncorreto
         [Fact]
@@ -23,7 +23,7 @@ namespace queroCentoBETestes
             var bodyToken = new
             {
                 userid = "faustao",
-                accesskey = ""
+                accesskey = "a"
             };
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, new Uri(URL_TOKEN))
             {
@@ -73,7 +73,7 @@ namespace queroCentoBETestes
                 username = "TesteCriacaoUsuario",
                 password = "teste"
             };
-            req = new HttpRequestMessage(HttpMethod.Put, new Uri(URL_API + "api/Usuarios/"));
+            req = new HttpRequestMessage(HttpMethod.Put, new Uri(URL_API + "/Usuarios/"));
             req.Headers.TryAddWithoutValidation("Authorization", token);
             req.Content = new StringContent(
                 JsonConvert.SerializeObject(body),
@@ -100,13 +100,13 @@ namespace queroCentoBETestes
             var response = await new HttpClient().SendAsync(req);
             dynamic it = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
             token = "Bearer " + it.accessToken;
-            HttpRequestMessage req2 = new HttpRequestMessage(HttpMethod.Get, new Uri(URL_API + "api/Usuarios/"));
+            HttpRequestMessage req2 = new HttpRequestMessage(HttpMethod.Get, new Uri(URL_API + "/Usuarios/"));
             req2.Headers.TryAddWithoutValidation("Authorization", token);
             response = await new HttpClient().SendAsync(req2);
             Usuario usuario = JsonConvert
                 .DeserializeObject<List<Usuario>>(response.Content.ReadAsStringAsync().Result)
                 .FirstOrDefault(x => x.Username == "TesteCriacaoUsuario");
-            req = new HttpRequestMessage(HttpMethod.Delete, new Uri(URL_API + "api/Usuarios/" + usuario.Id));
+            req = new HttpRequestMessage(HttpMethod.Delete, new Uri(URL_API + "/Usuarios/" + usuario.Id));
             req.Headers.TryAddWithoutValidation("Authorization", token);
             response = await new HttpClient().SendAsync(req);
             Assert.Equal(HttpStatusCode.Accepted, response.StatusCode);
