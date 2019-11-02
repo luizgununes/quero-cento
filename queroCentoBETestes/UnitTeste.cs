@@ -14,7 +14,7 @@ namespace queroCentoBETestes
 #if DEBUG
         const string URL_API = "http://localhost/api";
 #else
-        const string URL_API = "http://localhost:70/api";
+        const string URL_API = "http://localhost:80/api";
 #endif
         const string URL_TOKEN = URL_API + "/LoginApi/";
         string token;
