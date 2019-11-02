@@ -11,10 +11,14 @@ namespace queroCentoBETestes
 {
     public class UnitTest
     {
+#if DEBUG
         const string URL_API = "http://localhost/api";
+#else
+        const string URL_API = "https://querocento.herokuapp.com/api";
+#endif
         const string URL_TOKEN = URL_API + "/LoginApi/";
         string token;
-        #region TestTokenDeAcessoIncorreto
+#region TestTokenDeAcessoIncorreto
         [Fact]
         //Esperado -> erro na autenticação
         public async void TestTokenDeAcessoIncorreto()
@@ -33,8 +37,8 @@ namespace queroCentoBETestes
             HttpResponseMessage response = await new HttpClient().SendAsync(req);
             Assert.Contains("Falha ao autenticar", response.Content.ReadAsStringAsync().Result);
         }
-        #endregion
-        #region TestTokenDeAcessoLoginCorreto
+#endregion
+#region TestTokenDeAcessoLoginCorreto
         [Fact]
         public async void TestTokenDeAcessoLoginCorreto()
         {
@@ -49,8 +53,8 @@ namespace queroCentoBETestes
             var response = await new HttpClient().SendAsync(req);
             Assert.Contains("OK", response.Content.ReadAsStringAsync().Result);
         }
-        #endregion
-        #region TestCriacaoUsuario
+#endregion
+#region TestCriacaoUsuario
         [Fact]
         public async void TestCriacaoUsuario()
         {
@@ -81,8 +85,8 @@ namespace queroCentoBETestes
             response = await new HttpClient().SendAsync(req);
             Assert.Equal(HttpStatusCode.Created, response.StatusCode);
         }
-        #endregion
-        #region TestDeletarUsuario
+#endregion
+#region TestDeletarUsuario
         [Fact]
         public async void TestDeletarUsuario()
         {
@@ -111,6 +115,6 @@ namespace queroCentoBETestes
             response = await new HttpClient().SendAsync(req);
             Assert.Equal(HttpStatusCode.Accepted, response.StatusCode);
         }
-        #endregion
+#endregion
     }
 }
