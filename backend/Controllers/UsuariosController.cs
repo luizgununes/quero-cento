@@ -28,7 +28,7 @@ namespace queroCentoBE.Controllers
         /// Retorna todos os usuários cadastrados
         /// </summary>
         /// <returns></returns>
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpGet]
         public IEnumerable<Usuario> GetUsuario()
         {
@@ -40,7 +40,7 @@ namespace queroCentoBE.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // GET: api/Usuarios/5
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUsuario([FromRoute] string id)
         {
@@ -64,7 +64,7 @@ namespace queroCentoBE.Controllers
         /// <param name="usuario"></param>
         /// <returns></returns>
         // PUT: api/Usuarios/
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpPut]
         public async Task<IActionResult> PutUsuario([FromBody] Usuario usuario)
         {
@@ -89,7 +89,7 @@ namespace queroCentoBE.Controllers
         /// <param name="usuario"></param>
         /// <returns></returns>
         // POST: api/Usuarios
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpPost]
         public async Task<IActionResult> PostUsuario([FromBody] Usuario usuario)
         {
@@ -108,7 +108,7 @@ namespace queroCentoBE.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         // DELETE: api/Usuarios/5
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario([FromRoute] string id)
         {
