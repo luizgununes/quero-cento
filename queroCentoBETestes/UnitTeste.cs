@@ -14,13 +14,13 @@ namespace queroCentoBETestes
 #if DEBUG
         const string URL_API = "http://localhost/api";
 #else
-        const string URL_API = "http://localhost:80/api";
+        const string URL_API = "http://localhost:8080/api";
 #endif
         const string URL_TOKEN = URL_API + "/LoginApi/";
         string token;
 #region TestTokenDeAcessoIncorreto
         [Fact]
-        //Esperado -> erro na autenticação
+        //Esperado -> erro na autenticaÃ§Ã£o
         public async void TestTokenDeAcessoIncorreto()
         {
             //JSON PARA RESGATAR TOKEN
@@ -33,7 +33,7 @@ namespace queroCentoBETestes
             {
                 Content = new StringContent(JsonConvert.SerializeObject(bodyToken), Encoding.UTF8, "application/json")
             };
-            //FAZ REQUISIÇÃO
+            //FAZ REQUISIÃ‡ÃƒO
             HttpResponseMessage response = await new HttpClient().SendAsync(req);
             Assert.Contains("Falha ao autenticar", response.Content.ReadAsStringAsync().Result);
         }
@@ -49,7 +49,7 @@ namespace queroCentoBETestes
             };
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, new Uri(URL_TOKEN));
             req.Content = new StringContent(JsonConvert.SerializeObject(bodyToken), Encoding.UTF8, "application/json");
-            //FAZ REQUISIÇÃO
+            //FAZ REQUISIÃ‡ÃƒO
             var response = await new HttpClient().SendAsync(req);
             Assert.Contains("OK", response.Content.ReadAsStringAsync().Result);
         }
@@ -68,7 +68,7 @@ namespace queroCentoBETestes
             {
                 Content = new StringContent(JsonConvert.SerializeObject(bodyToken), Encoding.UTF8, "application/json")
             };
-            //FAZ REQUISIÇÃO
+            //FAZ REQUISIÃ‡ÃƒO
             var response = await new HttpClient().SendAsync(req);
             dynamic it = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
             token = "Bearer " + it.accessToken;
@@ -100,7 +100,7 @@ namespace queroCentoBETestes
             req.Content = new StringContent(
                 JsonConvert.SerializeObject(bodyToken),
                 Encoding.UTF8, "application/json");
-            //FAZ REQUISIÇÃO
+            //FAZ REQUISIÃ‡ÃƒO
             var response = await new HttpClient().SendAsync(req);
             dynamic it = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
             token = "Bearer " + it.accessToken;
