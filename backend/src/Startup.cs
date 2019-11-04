@@ -86,6 +86,10 @@ namespace queroCento_BE
                 });
                 c.AddSecurityRequirement(security);
             });
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(ValidateModelStateAttribute));
+            });
 
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -31,24 +31,24 @@ namespace queroCentoBE.Controllers
         /// <summary>
         /// Retorna todos os documentos contendo o ID especificado
         /// </summary>
-        /// <param name="predicate"></param>
+        /// <param name="obj"></param>
         /// <returns>O documento especificado da Collection</returns>
         [HttpGet("{id}")]
-        public virtual IActionResult Get([FromRoute] string id)
+        public virtual IActionResult Get([FromRoute] string obj)
         {
             if (!new ModelStateDictionary().IsValid)
             {
                 return new BadRequestResult();
             }
 
-            var obj = Context.Find(x => x.Id == id).FirstOrDefault<T>();
+            var document = Context.Find(x => x.Id == obj).FirstOrDefault<T>();
 
             if (obj == null)
             {
                 return new NotFoundResult();
             }
 
-            return new AcceptedResult("Get", obj);
+            return new AcceptedResult("Get", document);
         }
         /// <summary>
         /// Recebe todos os parametros em um formato JSON e insere no documento da Collection
@@ -56,9 +56,8 @@ namespace queroCentoBE.Controllers
         /// <param name="obj"></param>
         /// <returns>Documento criado na Collection</returns>
         [HttpPut]
-        public virtual T Put(T obj)
+        public virtual IActionResult Put(T obj)
         {
-
             try
             {
                 Context.InsertOne(obj);
@@ -68,13 +67,12 @@ namespace queroCentoBE.Controllers
                 throw;
             }
 
-            return obj;
+            return new CreatedResult("Get", obj.Id);
         }
         /// <summary>
         /// Recebe o ID do documento e realiza a atualização na Collection
         /// </summary>
         /// <param name="obj"></param>
-        /// <param name="predicate"></param>
         /// <returns>Status:201</returns>
         [HttpPost]
         public virtual IActionResult Post(T obj)
@@ -94,9 +92,13 @@ namespace queroCentoBE.Controllers
         [HttpDelete("{id}")]
         public virtual IActionResult Delete(string obj)
         {
+            if (!Context.Find(x => x.Id == obj).Any())
+            {
+                return new NotFoundResult();
+            }
             Context.DeleteOne(x => x.Id == obj);
 
-            return new BadRequestResult();
+            return new AcceptedResult();
         }
 
 
