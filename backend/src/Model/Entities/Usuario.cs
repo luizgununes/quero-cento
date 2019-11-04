@@ -16,6 +16,7 @@ namespace queroCentoBE.Model.Entities
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         [Required]
+        [RegularExpression(@"[\w\W\.\@]+",ErrorMessage = "O username não pode conter espaços e acentuação")]
         public string Username { get; set; }
         [Required]
         public string Password { get; set; }
@@ -25,7 +26,7 @@ namespace queroCentoBE.Model.Entities
         [RegularExpression(@"(\d{2}[\.]?\d{3}[\.]?\d{3}[\/]?\d{4}[-]?\d{2})|(\d{3}[\.]?\d{3}[\.]?\d{3}[-]?\d{2})", ErrorMessage = "O documento deve estar no formato: XXX.XXX.XXX-XX ou XX.XXX.XXX/XXXX-XX")]
         public string Documento { get; set; }
         [Required]
-        [RegularExpression(@"^[aA-zZ]+((\s[aA-zZ]+)+)?$", ErrorMessage = "O nome deve estar em um formato válido")]
+        [RegularExpression(@"^[aA-zZàÀ-ùÙáÁ-úÚ\\çÇ\']+((\s[aA-zZàÀ-ùÙáÁ-úÚ\\çÇ\'\.]+)+)?$", ErrorMessage = "O nome deve estar em um formato válido")]
         public string Nome { get; set; }
         public string EndRua { get; set; }
         public string EndNum { get; set; }
