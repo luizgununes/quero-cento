@@ -73,10 +73,6 @@ namespace queroCentoBE.Controllers
         [HttpPost]
         public virtual async Task<IActionResult> Post(T obj)
         {
-            if (!new ModelStateDictionary().IsValid)
-            {
-                return new BadRequestResult();
-            }
             await Context.ReplaceOneAsync(x => x.Id == obj.Id, obj);
 
             return new CreatedResult("Get", obj);
