@@ -32,12 +32,12 @@ namespace queroCentoBE.Controllers
         /// <summary>
         /// Retorna todos os documentos contendo o ID especificado
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="id"></param>
         /// <returns>O documento especificado da Collection</returns>
         [HttpGet("{id}")]
-        public virtual async Task<IActionResult> Get([FromRoute] string obj)
+        public virtual async Task<IActionResult> Get([FromRoute] string id)
         {
-            var documento = await Context.FindAsync(x => x.Id == obj);
+            var documento = await Context.Find(x => x.Id == id).FirstOrDefaultAsync();
 
             if (documento == null)
             {
@@ -80,16 +80,16 @@ namespace queroCentoBE.Controllers
         /// <summary>
         /// Recebe o ID do documento e deleta o mesmo na Collection
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="id"></param>
         /// <returns>Status:201</returns>
         [HttpDelete("{id}")]
-        public virtual async Task<IActionResult> Delete(string obj)
+        public virtual async Task<IActionResult> Delete([FromRoute]string id)
         {
-            if (!Context.Find(x => x.Id == obj).Any())
+            if (!await Context.Find(x => x.Id == id).AnyAsync())
             {
                 return new NotFoundResult();
             }
-            await Context.DeleteOneAsync(x => x.Id == obj);
+            await Context.DeleteOneAsync(x => x.Id == id);
 
             return new AcceptedResult();
         }
