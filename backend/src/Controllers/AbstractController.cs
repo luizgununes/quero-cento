@@ -37,11 +37,6 @@ namespace queroCentoBE.Controllers
         [HttpGet("{id}")]
         public virtual async Task<IActionResult> Get([FromRoute] string obj)
         {
-            if (!new ModelStateDictionary().IsValid)
-            {
-                return new BadRequestResult();
-            }
-
             var documento = await Context.FindAsync(x => x.Id == obj);
 
             if (documento == null)
