@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace queroCentoBE.Model.Entities
 {
-    public class Pedido
+    public class Pedido : IEntidade
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

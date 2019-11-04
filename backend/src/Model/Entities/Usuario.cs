@@ -5,26 +5,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace queroCentoBE.Model.Entities
 {
-    public class Usuario
+    public class Usuario : IEntidade
     {
-        public Usuario(string id, string username, string password, string tipoUsuario, string documento, string nome, string endRua, string endNum, string endBairro, string endCidade, string endComplemento, string endEstado, byte imagemUsuario, string telefone)
-        {
-            Id = id;
-            Username = username;
-            Password = password;
-            TipoUsuario = tipoUsuario;
-            Documento = documento;
-            Nome = nome;
-            EndRua = endRua;
-            EndNum = endNum;
-            EndBairro = endBairro;
-            EndCidade = endCidade;
-            EndComplemento = endComplemento;
-            EndEstado = endEstado;
-            ImagemUsuario = imagemUsuario;
-            Telefone = telefone;
-        }
-
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }

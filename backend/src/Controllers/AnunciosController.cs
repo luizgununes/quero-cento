@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using queroCentoBE.Model;
 using queroCentoBE.Model.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -12,9 +11,9 @@ namespace queroCentoBE.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : AbstractController<Usuario>
+    public class AnunciosController : AbstractController<Anuncio>
     {
-        public UsuariosController() : base(new MongoDbContext().Usuario)
+        public AnunciosController() : base(new MongoDbContext().Anuncio)
         {
         }
     }
