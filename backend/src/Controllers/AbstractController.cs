@@ -63,7 +63,7 @@ namespace queroCentoBE.Controllers
                 throw;
             }
 
-            return new CreatedResult("Get", obj.Id);
+            return new CreatedResult("Get", obj);
         }
         /// <summary>
         /// Recebe o ID do documento e realiza a atualização na Collection
