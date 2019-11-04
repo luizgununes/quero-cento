@@ -1,7 +1,9 @@
 <ion-content padding class="animated fadeIn login auth-page">
   
   <div class="auth-content">
-    <div class="logo"></div>
+    <div class="logo">
+      <ion-img id="logoImg" [src]="logo"></ion-img>
+    </div>
     <form [formGroup]="onLoginForm" class="list-form">
       <ion-item no-padding class="animated fadeInUp">
         <ion-label class="placeholder" position="floating">

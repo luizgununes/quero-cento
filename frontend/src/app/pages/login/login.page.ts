@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http';
 export class LoginPage implements OnInit {
   public onLoginForm: FormGroup;
 
+  logo = 'assets/logo.png';
+
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,
@@ -66,7 +68,6 @@ export class LoginPage implements OnInit {
             loader.present();
             loader.onWillDismiss().then(async l => {
               const toast = await this.toastCtrl.create({
-                showCloseButton: true,
                 message: 'Uma nova senha foi enviada para seu e-mail.',
                 duration: 3000,
                 position: 'bottom'

@@ -135,16 +135,19 @@ ion-item {
       }
     }
   
+    #logoImg {
+      margin-top: 50px;
+      height: 100%;
+      width: 75%;
+      object-fit: cover;
+    }
+
     .auth-content {
       margin: 0 5%;
   
       .logo {
-        width: 90%;
-        height: 100px;
-        margin: 20px auto 8px;
-        border-radius: 10%;
-        background: url("/assets/logo.png") no-repeat;
-        background-size: 100%;
+        display: flex;
+        justify-content: center;
       }
   
       .list-form {

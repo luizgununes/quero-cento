@@ -12,7 +12,7 @@ export class ImagePage implements OnInit {
   public image: any;
 
   constructor(
-    private nav: NavController,
+    public navCtrl: NavController,
     private modalCtrl: ModalController,
     private sanitizer: DomSanitizer
   ) {}

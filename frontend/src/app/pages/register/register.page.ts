@@ -11,6 +11,8 @@ import { HttpClient } from '@angular/common/http';
 export class RegisterPage implements OnInit {
   public onRegisterForm: FormGroup;
 
+  logo = 'assets/logo.png';
+
   constructor(
     public navCtrl: NavController,
     public menuCtrl: MenuController,

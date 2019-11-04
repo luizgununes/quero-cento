@@ -3,7 +3,9 @@
   <div class="auth-content">
 
     <div padding-horizontal text-center>
-      <div class="logo"></div>
+      <div class="logo">
+        <ion-img id="logoImg" [src]="logo"></ion-img>
+      </div>
     </div>
 
     <form [formGroup]="onRegisterForm" class="list-form">
@@ -51,8 +53,8 @@
     </form>
 
     <div margin-top>
-      <ion-button icon-left size="medium" expand="full" shape="round" id="botao-entrar" (click)="goToLogin()" [disabled]="!onRegisterForm.valid"
-        tappable>
+      <ion-button icon-left size="medium" expand="full" shape="round" id="botao-entrar" (click)="goToLogin()"
+        [disabled]="!onRegisterForm.valid" tappable>
         CADASTRAR
       </ion-button>
     </div>

@@ -61,7 +61,6 @@ export class EditProfilePage implements OnInit {
     loader.present();
     loader.onWillDismiss().then(async l => {
       const toast = await this.toastCtrl.create({
-        showCloseButton: true,
         cssClass: 'bg-profile',
         message: 'Seus dados foram alterados com sucesso!',
         duration: 3000,
