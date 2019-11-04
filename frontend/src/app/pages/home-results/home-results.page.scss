@@ -15,14 +15,23 @@
     }
 }
 
-#botaoSalgado {
+#cardSalgados {
     cursor: pointer;
-    height: 45%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 35%;
+    margin-bottom: 0px !important;
 }
 
-#botaoDoce {
+#cardDoces {
     cursor: pointer;
-    height: 45%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 35%;
 }
 
 #cardHome {
@@ -33,8 +42,16 @@
     margin-left: 40px;
 }
 
+#botaoSalgados {
+    width: 85%;
+    color: white;
+    top: -7px;
+}
+
 #cardGeral {
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #imgSalgado {
@@ -49,4 +66,8 @@
     margin-bottom: -16px;
     margin-left: 3px;
     margin-right: 2px;
+}
+
+#imgsInicial {
+    width: 100%;
 }

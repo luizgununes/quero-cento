@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/luizgununes/QueroCento/issues"
   },
-  "homepage": "https://github.com/luizgununes/QueroCento#readme"
+  "homepage": "https://github.com/luizgununes/QueroCento#readme",
+  "dependencies": {
+    "rxjs-compat": "^6.5.3"
+  }
 }

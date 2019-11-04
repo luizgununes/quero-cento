@@ -12,7 +12,7 @@
     <ion-card-content class="bg-profile">
       <img src="assets/avatar.jpg">
       <h1 id="tituloPerfil" class="fw500">Fausto Silva</h1>
-      <ion-button icon-left color="tertiary">
+      <ion-button (click)="getImages()" icon-left color="tertiary">
         Editar Avatar
       </ion-button>
     </ion-card-content>
@@ -39,33 +39,18 @@
             </ion-item>
 
             <ion-item>
-              <ion-label color="dark">Cidade</ion-label>
-              <ion-select id="seletorCidade">
-                <ion-select-option>Ponta Grossa</ion-select-option>
+              <ion-label color="dark" position="stacked">Região</ion-label>
+              <ion-select placeholder="Escolher" id="seletorCidade">
+                <ion-select-option>(41) Curitiba e Região</ion-select-option>
+                <ion-select-option>(42) Ponta Grossa e Região</ion-select-option>
+                <ion-select-option>(43) Londrina e Região</ion-select-option>
+                <ion-select-option>(44) Maringá e Região</ion-select-option>
+                <ion-select-option>(45) Foz do Iguaçu e Região</ion-select-option>
+                <ion-select-option>(46) Pato Branco e Região</ion-select-option>
               </ion-select>
             </ion-item>
 
           </ion-list>
-
-          <ion-list>
-            <ion-radio-group>
-              <ion-list-header color="light">
-                <ion-label class="fw700">Eu quero...</ion-label>
-              </ion-list-header>
-
-              <ion-item>
-                <ion-label color="primary">Comprar</ion-label>
-                <ion-radio slot="start" value="customer" checked></ion-radio>
-              </ion-item>
-
-              <ion-item>
-                <ion-label color="primary">Vender</ion-label>
-                <ion-radio slot="start" value="agent"></ion-radio>
-              </ion-item>
-            </ion-radio-group>
-
-          </ion-list>
-
         </ion-col>
       </ion-row>
     </ion-grid>

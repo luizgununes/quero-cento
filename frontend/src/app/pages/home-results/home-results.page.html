@@ -15,16 +15,10 @@
 </ion-header>
 
 <ion-content id="cardGeral">
-  <ion-card id="botaoSalgado" (click)="presentImage(salgados)" class="bg-white">
-    <ion-img id="imgSalgado" [src]="salgados"></ion-img>
-    <ion-button id="tituloBotao" expand="full" color="tertiary">
-      Salgados
-    </ion-button>
+  <ion-card id="cardSalgados" (click)="presentImage(salgados)" class="bg-white">
+    <ion-img id="imgsInicial" [src]="salgados"></ion-img>
   </ion-card>
-  <ion-card id="botaoDoce" (click)="presentImage(doces)" class="bg-white">
-    <ion-img id="imgDoces" [src]="doces"></ion-img>
-    <ion-button expand="full" color="primary">
-      Doces
-    </ion-button>
+  <ion-card id="cardDoces" (click)="presentImage(doces)" class="bg-white">
+    <ion-img id="imgsInicial" [src]="doces"></ion-img>
   </ion-card>
 </ion-content>

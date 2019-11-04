@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -11,7 +10,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
+
 import { ImagePageModule } from './pages/modal/image/image.module';
+import { LoginPageModule } from './pages/login/login.module';
+import { RegisterPageModule } from './pages/register/register.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,13 +23,17 @@ import { ImagePageModule } from './pages/modal/image/image.module';
     BrowserAnimationsModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule,
-    ImagePageModule
+    ImagePageModule,
+    LoginPageModule,
+    RegisterPageModule,
   ],
   entryComponents: [],
   providers: [
     StatusBar,
     SplashScreen,
+    LoginPageModule,
+    ImagePicker,
+    RegisterPageModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

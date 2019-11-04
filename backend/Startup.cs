@@ -108,8 +108,9 @@ namespace queroCento_BE
             else
             {
                 app.UseHsts();
+                app.UseCors("localhost:5000/api/usuarios"); 
             }
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseMvc(routes =>
                 routes.MapRoute("default", "{controller=Main}/{action=Index}/")
             );

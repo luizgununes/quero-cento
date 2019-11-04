@@ -16,8 +16,8 @@ import { ImagePage } from './../modal/image/image.page';
 })
 export class HomeResultsPage {
   searchKey = '';
-  salgados = 'assets/salgado.png';
-  doces = 'assets/doce.png';
+  salgados = 'assets/salgadao.png';
+  doces = 'assets/docao.png';
 
   constructor(
     public navCtrl: NavController,
@@ -32,13 +32,6 @@ export class HomeResultsPage {
 
   ionViewWillEnter() {
     this.menuCtrl.enable(true);
-  }
-
-  async searchFilter () {
-    const modal = await this.modalCtrl.create({
-      component: SearchFilterPage
-    });
-    return await modal.present();
   }
 
   async presentImage(image: any) {

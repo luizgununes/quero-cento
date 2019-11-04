@@ -24,7 +24,7 @@
             <ion-label>Menu</ion-label>
           </ion-list-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerLink]="[p.url]" color="primary">
+            <ion-item lines="none" [routerLink]="[p.url]" color="primary">
               <ion-icon slot="start" [name]="p.icon" color="light"></ion-icon>
               <ion-label>
                 {{p.title}}
