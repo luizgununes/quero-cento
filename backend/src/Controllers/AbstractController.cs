@@ -5,6 +5,7 @@ using MongoDB.Driver;
 using queroCentoBE.Model;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace queroCentoBE.Controllers
 {
@@ -34,21 +35,21 @@ namespace queroCentoBE.Controllers
         /// <param name="obj"></param>
         /// <returns>O documento especificado da Collection</returns>
         [HttpGet("{id}")]
-        public virtual IActionResult Get([FromRoute] string obj)
+        public virtual async Task<IActionResult> Get([FromRoute] string obj)
         {
             if (!new ModelStateDictionary().IsValid)
             {
                 return new BadRequestResult();
             }
 
-            var document = Context.Find(x => x.Id == obj).FirstOrDefault<T>();
+            var documento = await Context.FindAsync(x => x.Id == obj);
 
-            if (obj == null)
+            if (documento == null)
             {
                 return new NotFoundResult();
             }
 
-            return new AcceptedResult("Get", document);
+            return new AcceptedResult("Get", documento);
         }
         /// <summary>
         /// Recebe todos os parametros em um formato JSON e insere no documento da Collection
@@ -56,11 +57,11 @@ namespace queroCentoBE.Controllers
         /// <param name="obj"></param>
         /// <returns>Documento criado na Collection</returns>
         [HttpPut]
-        public virtual IActionResult Put(T obj)
+        public virtual async Task<IActionResult> Put(T obj)
         {
             try
             {
-                Context.InsertOne(obj);
+                await Context.InsertOneAsync(obj);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -75,13 +76,14 @@ namespace queroCentoBE.Controllers
         /// <param name="obj"></param>
         /// <returns>Status:201</returns>
         [HttpPost]
-        public virtual IActionResult Post(T obj)
+        public virtual async Task<IActionResult> Post(T obj)
         {
             if (!new ModelStateDictionary().IsValid)
             {
                 return new BadRequestResult();
             }
-            Context.ReplaceOne(x => x.Id == obj.Id, obj);
+            await Context.ReplaceOneAsync(x => x.Id == obj.Id, obj);
+
             return new CreatedResult("Get", obj);
         }
         /// <summary>
@@ -90,13 +92,13 @@ namespace queroCentoBE.Controllers
         /// <param name="obj"></param>
         /// <returns>Status:201</returns>
         [HttpDelete("{id}")]
-        public virtual IActionResult Delete(string obj)
+        public virtual async Task<IActionResult> Delete(string obj)
         {
             if (!Context.Find(x => x.Id == obj).Any())
             {
                 return new NotFoundResult();
             }
-            Context.DeleteOne(x => x.Id == obj);
+            await Context.DeleteOneAsync(x => x.Id == obj);
 
             return new AcceptedResult();
         }
