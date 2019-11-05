@@ -146,8 +146,10 @@ namespace queroCentoBETestes
             HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Delete, new Uri(URL_API + "/Usuarios/" + usuario?.Id));
             req.Headers.TryAddWithoutValidation("Authorization", token);
             response = await new HttpClient().SendAsync(req);
-
-            Assert.Equal(HttpStatusCode.Accepted, response.StatusCode);
+            if(usuario == null)
+                Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
+            else
+                Assert.Equal(HttpStatusCode.Accepted, response.StatusCode);
         }
 
         private async Task<string> Token()
