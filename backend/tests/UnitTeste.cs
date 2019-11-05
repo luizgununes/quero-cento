@@ -75,7 +75,10 @@ namespace queroCentoBETestes
             var body = new
             {
                 username = "TesteCriacaoUsuario",
-                password = "teste"
+                password = "teste",
+                tipo = 0,
+                documento = "42.385.367/0001-10",
+                nome = "Múrielzão lima"
             };
             req = new HttpRequestMessage(HttpMethod.Put, new Uri(URL_API + "/Usuarios/"));
             req.Headers.TryAddWithoutValidation("Authorization", token);
@@ -115,6 +118,6 @@ namespace queroCentoBETestes
             response = await new HttpClient().SendAsync(req);
             Assert.Equal(HttpStatusCode.Accepted, response.StatusCode);
         }
-#endregion
+        #endregion
     }
 }
