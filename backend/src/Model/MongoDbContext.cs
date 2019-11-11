@@ -40,20 +40,5 @@ namespace queroCentoBE.Model
                 return _database.GetCollection<UsuarioJWT>("UsuarioJWT");
             }
         }
-        public IMongoCollection<Pedido> Pedido
-        {
-            get
-            {
-                return _database.GetCollection<Pedido>("Pedido");
-            }
-        }
-        public IMongoCollection<Anuncio> Anuncio
-        {
-            get
-            {
-                return _database.GetCollection<Anuncio>("Anuncio");
-            }
-        }
-
     }
 }
