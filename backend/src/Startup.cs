@@ -107,7 +107,7 @@ namespace queroCento_BE
             }
             else
             {
-             //   app.UseHsts();
+                app.UseHsts();
                 app.UseCors("querocento.heroku.com"); 
             }
             // app.UseHttpsRedirection();
