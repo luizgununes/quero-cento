@@ -107,8 +107,8 @@ namespace queroCento_BE
             }
             else
             {
-                app.UseHsts();
-                app.UseCors("localhost:5000/api/usuarios"); 
+             //   app.UseHsts();
+                app.UseCors("querocento.heroku.com"); 
             }
             // app.UseHttpsRedirection();
             app.UseMvc(routes =>
