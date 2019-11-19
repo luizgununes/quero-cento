@@ -1,42 +1,34 @@
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { IonicModule } from '@ionic/angular';
+import { IonicStorageModule } from '@ionic/storage';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-import { ImagePicker } from '@ionic-native/image-picker/ngx';
-
-import { ImagePageModule } from './pages/modal/image/image.module';
-import { LoginPageModule } from './pages/login/login.module';
-import { RegisterPageModule } from './pages/register/register.module';
+import { AppComponent } from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    IonicModule.forRoot(),
     AppRoutingModule,
-    ImagePageModule,
-    LoginPageModule,
-    RegisterPageModule,
+    HttpClientModule,
+    HttpModule,
+    FormsModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
-  entryComponents: [],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    LoginPageModule,
-    ImagePicker,
-    RegisterPageModule,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-  ],
+  declarations: [AppComponent],
+  providers: [InAppBrowser, SplashScreen, StatusBar],
   bootstrap: [AppComponent]
 })
-
 export class AppModule {}
