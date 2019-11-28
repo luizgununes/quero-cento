@@ -27,9 +27,6 @@ export class AccountPage implements AfterViewInit {
     console.log('Clicked to update picture');
   }
 
-  // Present an alert with the current username populated
-  // clicking OK will update the username and display it
-  // clicking Cancel will close the alert and do nothing
   async changeUsername() {
     const alert = await this.alertCtrl.create({
       header: 'Change Username',
@@ -65,12 +62,9 @@ export class AccountPage implements AfterViewInit {
     console.log('Clicked to change password');
   }
 
-  logout() {
-    this.userData.logout();
+  sair() {
+    this.userData.sair();
     this.router.navigateByUrl('/login');
   }
 
-  support() {
-    this.router.navigateByUrl('/support');
-  }
 }

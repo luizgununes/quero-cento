@@ -4,261 +4,184 @@
       "date": "2047-05-17",
       "groups": [
         {
-          "time": "8:00 am",
           "sessions": [
             {
-              "name": "Coxinha",
-              "timeStart": "8:00 am",
-              "timeEnd": "9:00 am",
-              "location": "Dining Hall",
-              "tracks": ["Salgados"],
-              "id": "1"
-            }
-          ]
-        },
-        {
-          "time": "9:15 am",
-          "sessions": [
-            {
-              "name": "Pastel",
-              "location": "Hall 2",
-              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-              "speakerNames": ["Ted Turtle"],
-              "timeStart": "9:30 am",
-              "timeEnd": "9:45 am",
-              "tracks": ["Salgados"],
-              "id": "2"
+              "id": "1",
+              "nome": "Coxinha",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Palmirinha"
+              ]
             },
             {
-              "name": "Brigadeiro",
-              "location": "Executive Ballroom",
-              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-              "speakerNames": ["Rachel Rabbit"],
-              "timeStart": "9:45 am",
-              "timeEnd": "10:00 am",
-              "tracks": ["Doces"],
-              "id": "3"
+              "id": "2",
+              "nome": "Pastel",
+              "preco": "R$ 40,00",
+              "cidade": "Carambeí",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
             },
             {
-              "name": "Bolinha de Queijo",
-              "location": "Hall 3",
-              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-              "speakerNames": ["Ellie Elephant"],
-              "timeStart": "9:15 am",
-              "timeEnd": "9:30 am",
-              "tracks": ["Salgados"],
-              "id": "4"
-            }
-          ]
-        },
-        {
-          "time": "10:00 am",
-          "sessions": [
-            {
-              "name": "Beijinho",
-              "location": "Hall 1",
-              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-              "speakerNames": ["Eva Eagle", "Lionel Lion"],
-              "timeStart": "10:00 am",
-              "timeEnd": "10:15 am",
-              "tracks": ["Doces"],
-              "id": "5"
+              "id": "3",
+              "nome": "Brigadeiro",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/docao.png",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Ana Maria Braga"
+              ]
             },
             {
-              "name": "Esfiha",
-              "location": "Hall 3",
-              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-              "speakerNames": ["Rachel Rabbit"],
-              "timeStart": "10:15 am",
-              "timeEnd": "10:30 am",
-              "tracks": ["Salgados"],
-              "id": "6"
+              "id": "4",
+              "nome": "Bolinha de Queijo",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Edmilson"
+              ]
             },
             {
-              "name": "Mini Pizza",
-              "location": "Hall 2",
-              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-              "speakerNames": ["Isabella Iguana", "Eva Eagle"],
-              "timeStart": "10:15 am",
-              "timeEnd": "10:30 am",
-              "tracks": ["Salgados"],
-              "id": "7"
+              "id": "5",
+              "nome": "Beijinho",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Rodrigo Hilbert"
+              ]
             },
             {
-              "name": "Doce de Uva",
-              "location": "Grand Ballroom A",
-              "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
-              "speakerNames": ["Charlie Cheetah"],
-              "timeStart": "10:45 am",
-              "timeEnd": "11:00 am",
-              "tracks": ["Doces"],
-              "id": "8"
+              "id": "6",
+              "nome": "Esfiha",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Palmirinha"
+              ]
+            },
+            {
+              "id": "7",
+              "nome": "Mini Pizza",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
+            },
+            {
+              "id": "8",
+              "nome": "Doce de Uva",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
             }
           ]
         }
       ]
     }
   ],
-
-  "speakers": [
+  "comerciantes": [
     {
-      "name": "Burt Bear",
-      "profilePic": "assets/img/speakers/bear.jpg",
-      "twitter": "ionicframework",
+      "id": "1",
+      "nome": "Palmirinha",
+      "profilePic": "assets/img/comerciantes/palmirinha.png",
       "about": "Burt is a Bear.",
       "location": "Everywhere",
-      "email": "burt@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "1"
+      "phone": "3226-1234"
     },
     {
-      "name": "Charlie Cheetah",
-      "profilePic": "assets/img/speakers/cheetah.jpg",
-      "twitter": "ionicframework",
+      "id": "2",
+      "nome": "Rodrigo Hilbert",
+      "profilePic": "assets/img/comerciantes/rodrigo_hilbert.png",
       "about": "Charlie is a Cheetah.",
       "location": "Everywhere",
-      "email": "charlie@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "2"
+      "phone": "99999-9999"
     },
     {
-      "name": "Donald Duck",
-      "profilePic": "assets/img/speakers/duck.jpg",
-      "twitter": "ionicframework",
+      "id": "3",
+      "nome": "Jacquin",
+      "profilePic": "assets/img/comerciantes/jacquin.png",
       "about": "Donald is a Duck.",
       "location": "Everywhere",
-      "email": "donald@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "3"
+      "phone": "99853-2213"
     },
     {
-      "name": "Eva Eagle",
-      "profilePic": "assets/img/speakers/eagle.jpg",
-      "twitter": "ionicframework",
+      "id": "4",
+      "nome": "Ana Maria Braga",
+      "profilePic": "assets/img/comerciantes/ana_maria.png",
       "about": "Eva is an Eagle.",
       "location": "Everywhere",
-      "email": "eva@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "4"
+      "phone": "92377-8943"
     },
     {
-      "name": "Ellie Elephant",
-      "profilePic": "assets/img/speakers/elephant.jpg",
-      "twitter": "ionicframework",
+      "id": "5",
+      "nome": "Edmilson",
+      "profilePic": "assets/img/comerciantes/edmilson.png",
       "about": "Ellie is an Elephant.",
       "location": "Everywhere",
-      "email": "ellie@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "5"
-    },
-    {
-      "name": "Gino Giraffe",
-      "profilePic": "assets/img/speakers/giraffe.jpg",
-      "twitter": "ionicframework",
-      "about": "Gino is a Giraffe.",
-      "location": "Everywhere",
-      "email": "gino@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "6"
-    },
-    {
-      "name": "Isabella Iguana",
-      "profilePic": "assets/img/speakers/iguana.jpg",
-      "twitter": "ionicframework",
-      "about": "Isabella is an Iguana.",
-      "location": "Everywhere",
-      "email": "isabella@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "7"
-    },
-    {
-      "name": "Karl Kitten",
-      "profilePic": "assets/img/speakers/kitten.jpg",
-      "twitter": "ionicframework",
-      "about": "Karl is a Kitten.",
-      "location": "Everywhere",
-      "email": "karl@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "8"
-    },
-    {
-      "name": "Lionel Lion",
-      "profilePic": "assets/img/speakers/lion.jpg",
-      "twitter": "ionicframework",
-      "about": "Lionel is a Lion.",
-      "location": "Everywhere",
-      "email": "lionel@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "9"
-    },
-    {
-      "name": "Molly Mouse",
-      "profilePic": "assets/img/speakers/mouse.jpg",
-      "twitter": "ionicframework",
-      "about": "Molly is a Mouse.",
-      "location": "Everywhere",
-      "email": "molly@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "10"
-    },
-    {
-      "name": "Paul Puppy",
-      "profilePic": "assets/img/speakers/puppy.jpg",
-      "twitter": "ionicframework",
-      "about": "Paul is a Puppy.",
-      "location": "Everywhere",
-      "email": "paul@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "11"
-    },
-    {
-      "name": "Rachel Rabbit",
-      "profilePic": "assets/img/speakers/rabbit.jpg",
-      "twitter": "ionicframework",
-      "about": "Rachel is a Rabbit.",
-      "location": "Everywhere",
-      "email": "rachel@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "12"
-    },
-    {
-      "name": "Ted Turtle",
-      "profilePic": "assets/img/speakers/turtle.jpg",
-      "twitter": "ionicframework",
-      "about": "Ted is a Turtle.",
-      "location": "Everywhere",
-      "email": "ted@example.com",
-      "phone": "+1-541-754-3010",
-      "id": "13"
+      "phone": "3226-7233"
     }
   ],
-
   "map": [
     {
-      "name": "Cesinha Burguer",
+      "nome": "Pé de Fava",
       "lat": -24.9491579,
       "lng": -50.1186468,
       "center": true
     },
     {
-      "name": "Ionic HQ",
+      "nome": "Heroes Burger",
       "lat": 43.074395,
       "lng": -89.381056
     },
     {
-      "name": "Afterparty - Brocach Irish Pub",
+      "nome": "Alquimia",
       "lat": 43.07336,
       "lng": -89.38335
     }
   ],
-
   "tracks": [
     {
-      "name": "Salgados",
+      "nome": "Salgados",
       "icon": "restaurant"
     },
     {
-      "name": "Doces",
+      "nome": "Doces",
       "icon": "logo-ionic"
     }
   ]

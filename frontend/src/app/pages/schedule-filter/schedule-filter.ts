@@ -25,15 +25,14 @@ export class ScheduleFilterPage implements AfterViewInit {
     this.ios = this.config.get('mode') === `ios`;
   }
 
-  // TODO use the ionViewDidEnter event
   ngAfterViewInit() {
-    // passed in array of track names that should be excluded (unchecked)
+
     const excludedTrackNames = this.navParams.get('excludedTracks');
 
     this.confData.getTracks().subscribe((tracks: any[]) => {
       tracks.forEach(track => {
         this.tracks.push({
-          name: track.name,
+          name: track.nome,
           icon: track.icon,
           isChecked: (excludedTrackNames.indexOf(track.name) === -1)
         });
@@ -42,21 +41,17 @@ export class ScheduleFilterPage implements AfterViewInit {
   }
 
   selectAll(check: boolean) {
-    // set all to checked or unchecked
     this.tracks.forEach(track => {
       track.isChecked = check;
     });
   }
 
-  applyFilters() {
-    // Pass back a new array of track names to exclude
+  aplicarFiltro() {
     const excludedTrackNames = this.tracks.filter(c => !c.isChecked).map(c => c.name);
     this.dismiss(excludedTrackNames);
   }
 
   dismiss(data?: any) {
-    // using the injected ModalController this page
-    // can "dismiss" itself and pass back data
     this.modalCtrl.dismiss(data);
   }
 }

@@ -42,7 +42,6 @@ export class SchedulePage implements OnInit {
   }
 
   updateSchedule() {
-    // Close any open sliding items when the schedule updates
     if (this.scheduleList) {
       this.scheduleList.closeSlidingItems();
     }
@@ -65,62 +64,6 @@ export class SchedulePage implements OnInit {
       this.excludeTracks = data;
       this.updateSchedule();
     }
-  }
-
-  async addFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: any) {
-    if (this.user.hasFavorite(sessionData.name)) {
-      // woops, they already favorited it! What shall we do!?
-      // prompt them to remove it
-      this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
-    } else {
-      // remember this session as a user favorite
-      this.user.addFavorite(sessionData.name);
-
-      // create an alert instance
-      const alert = await this.alertCtrl.create({
-        header: 'Favorite Added',
-        buttons: [{
-          text: 'OK',
-          handler: () => {
-            // close the sliding item
-            slidingItem.close();
-          }
-        }]
-      });
-      // now present the alert on top of all other content
-      await alert.present();
-    }
-
-  }
-
-  async removeFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: any, title: string) {
-    const alert = await this.alertCtrl.create({
-      header: title,
-      message: 'Would you like to remove this session from your favorites?',
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: () => {
-            // they clicked the cancel button, do not remove the session
-            // close the sliding item and hide the option buttons
-            slidingItem.close();
-          }
-        },
-        {
-          text: 'Remove',
-          handler: () => {
-            // they want to remove this session from their favorites
-            this.user.removeFavorite(sessionData.name);
-            this.updateSchedule();
-
-            // close the sliding item and hide the option buttons
-            slidingItem.close();
-          }
-        }
-      ]
-    });
-    // now present the alert on top of all other content
-    await alert.present();
   }
 
   async openSocial(network: string, fab: HTMLIonFabElement) {

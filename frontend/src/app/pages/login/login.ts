@@ -6,8 +6,6 @@ import { UserData } from '../../providers/user-data';
 
 import { UserOptions } from '../../interfaces/user-options';
 
-
-
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',

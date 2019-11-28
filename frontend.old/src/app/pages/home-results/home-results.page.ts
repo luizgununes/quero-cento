@@ -5,7 +5,8 @@ import {
   MenuController,
   ToastController,
   PopoverController,
-  ModalController } from '@ionic/angular';
+  ModalController
+} from '@ionic/angular';
 
 import { ImagePage } from './../modal/image/image.page';
 

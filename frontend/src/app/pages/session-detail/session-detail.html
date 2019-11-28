@@ -8,12 +8,14 @@
 
 <ion-content>
   <div *ngIf="session" class="ion-padding">
-    <h1>{{session.name}}</h1>
+    <h1>{{session.nome}}</h1>
     <span *ngFor="let track of session?.tracks" [class]="'session-track-'+track.toLowerCase()">{{track}}</span>
     <p>{{session.description}}</p>
     <ion-text color="medium">
-      {{session.timeStart}} &ndash; {{session.timeEnd}}
-      <br /> {{session.location}}
+      {{session.preco}}
+      <br/>
+      {{session.cidade}} &ndash; {{session.estado}}
+      <br/> {{session.location}}
     </ion-text>
   </div>
 

@@ -50,7 +50,7 @@ export class AppComponent {
     }).catch(() => { });
   }
 
-  logout() {
+  sair() {
     this.navCtrl.navigateRoot('/');
   }
 }

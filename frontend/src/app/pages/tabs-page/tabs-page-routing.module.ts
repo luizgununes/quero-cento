@@ -23,37 +23,37 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'speakers',
+        path: 'comerciantes',
         children: [
           {
             path: '',
-            loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+            loadChildren: () => import('../lista-comerciante/lista-comerciante.module').then(m => m.ListaComercianteModule)
           },
           {
             path: 'session/:sessionId',
             loadChildren: () => import('../session-detail/session-detail.module').then(m => m.SessionDetailModule)
           },
           {
-            path: 'speaker-details/:speakerId',
-            loadChildren: () => import('../speaker-detail/speaker-detail.module').then(m => m.SpeakerDetailModule)
+            path: 'detalhe-comerciante/:comercianteId',
+            loadChildren: () => import('../detalhe-comerciante/detalhe-comerciante.module').then(m => m.DetalheComercianteModule)
           }
         ]
       },
       {
-        path: 'map',
+        path: 'mapa',
         children: [
           {
             path: '',
-            loadChildren: () => import('../map/map.module').then(m => m.MapModule)
+            loadChildren: () => import('../mapa/mapa.module').then(m => m.MapaModule)
           }
         ]
       },
       {
-        path: 'about',
+        path: 'sobre',
         children: [
           {
             path: '',
-            loadChildren: () => import('../about/about.module').then(m => m.AboutModule)
+            loadChildren: () => import('../sobre/sobre.module').then(m => m.SobreModule)
           }
         ]
       },
@@ -71,4 +71,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class TabsPageRoutingModule { }
-

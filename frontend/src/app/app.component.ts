@@ -21,22 +21,22 @@ export class AppComponent implements OnInit {
   appPages = [
     {
       title: 'Anúncios',
-      url: '/app/tabs/schedule',
+      url: '/app/tabs/anuncios',
       icon: 'calendar'
     },
     {
       title: 'Comerciantes',
-      url: '/app/tabs/speakers',
+      url: '/app/tabs/comerciantes',
       icon: 'contacts'
     },
     {
       title: 'Mapa',
-      url: '/app/tabs/map',
+      url: '/app/tabs/mapa',
       icon: 'map'
     },
     {
-      title: 'About',
-      url: '/app/tabs/about',
+      title: 'Sobre',
+      url: '/app/tabs/sobre',
       icon: 'information-circle'
     }
   ];
@@ -102,17 +102,17 @@ export class AppComponent implements OnInit {
       this.updateLoggedInStatus(true);
     });
 
-    this.events.subscribe('user:signup', () => {
+    this.events.subscribe('user:cadastro', () => {
       this.updateLoggedInStatus(true);
     });
 
-    this.events.subscribe('user:logout', () => {
+    this.events.subscribe('user:sair', () => {
       this.updateLoggedInStatus(false);
     });
   }
 
-  logout() {
-    this.userData.logout().then(() => {
+  sair() {
+    this.userData.sair().then(() => {
       return this.router.navigateByUrl('/app/tabs/schedule');
     });
   }

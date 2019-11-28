@@ -5,23 +5,23 @@ import { IonicModule } from '@ionic/angular';
 import { TabsPage } from './tabs-page';
 import { TabsPageRoutingModule } from './tabs-page-routing.module';
 
-import { AboutModule } from '../about/about.module';
-import { MapModule } from '../map/map.module';
+import { SobreModule } from '../sobre/sobre.module';
+import { MapaModule } from '../mapa/mapa.module';
 import { ScheduleModule } from '../schedule/schedule.module';
 import { SessionDetailModule } from '../session-detail/session-detail.module';
-import { SpeakerDetailModule } from '../speaker-detail/speaker-detail.module';
-import { SpeakerListModule } from '../speaker-list/speaker-list.module';
+import { DetalheComercianteModule } from '../detalhe-comerciante/detalhe-comerciante.module';
+import { ListaComercianteModule } from '../lista-comerciante/lista-comerciante.module';
 
 @NgModule({
   imports: [
-    AboutModule,
+    SobreModule,
     CommonModule,
     IonicModule,
-    MapModule,
+    MapaModule,
     ScheduleModule,
     SessionDetailModule,
-    SpeakerDetailModule,
-    SpeakerListModule,
+    DetalheComercianteModule,
+    ListaComercianteModule,
     TabsPageRoutingModule
   ],
   declarations: [

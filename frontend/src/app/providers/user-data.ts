@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Events } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -16,21 +15,6 @@ export class UserData {
     public storage: Storage
   ) { }
 
-  hasFavorite(sessionName: string): boolean {
-    return (this._favorites.indexOf(sessionName) > -1);
-  }
-
-  addFavorite(sessionName: string): void {
-    this._favorites.push(sessionName);
-  }
-
-  removeFavorite(sessionName: string): void {
-    const index = this._favorites.indexOf(sessionName);
-    if (index > -1) {
-      this._favorites.splice(index, 1);
-    }
-  }
-
   login(username: string): Promise<any> {
     return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
       this.setUsername(username);
@@ -38,18 +22,18 @@ export class UserData {
     });
   }
 
-  signup(username: string): Promise<any> {
+  cadastro(username: string): Promise<any> {
     return this.storage.set(this.HAS_LOGGED_IN, true).then(() => {
       this.setUsername(username);
-      return this.events.publish('user:signup');
+      return this.events.publish('user:cadastro');
     });
   }
 
-  logout(): Promise<any> {
+  sair(): Promise<any> {
     return this.storage.remove(this.HAS_LOGGED_IN).then(() => {
       return this.storage.remove('username');
     }).then(() => {
-      this.events.publish('user:logout');
+      this.events.publish('user:sair');
     });
   }
 

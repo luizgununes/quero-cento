@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Comerciantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row class="ion-align-items-stretch">
+      <ion-col size="12" size-md="6" *ngFor="let comerciante of comerciantes">
+        <ion-card class="comerciante-card">
+          <ion-card-header>
+            <ion-item detail="false" lines="none"
+              routerLink="/app/tabs/comerciantes/detalhes-comerciante/{{comerciante.id}}">
+              <ion-avatar slot="start">
+                <img [src]="comerciante.profilePic" [alt]="comerciante.nome + ' profile picture'">
+              </ion-avatar>
+              {{comerciante.nome}}
+            </ion-item>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-list>
+              <ion-item *ngFor="let session of comerciante.sessions"
+                routerLink="/app/tabs/comerciantes/session/{{session.id}}">
+                <h3>{{session.nome}}</h3>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+
+          <ion-row class="ion-no-padding ion-justify-content-center">
+            <ion-button fill="clear" size="small" color="primary" (click)="openContact(comerciante)">
+              <ion-icon name="chatboxes" slot="start"></ion-icon>
+              Contato
+            </ion-button>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
