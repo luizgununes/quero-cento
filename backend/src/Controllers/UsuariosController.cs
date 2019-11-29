@@ -17,22 +17,6 @@ namespace queroCentoBE.Controllers
         public UsuariosController() : base(new MongoDbContext().Usuario)
         {
         }
-        /// <summary>
-        /// Encontra o usuario e retorna o documento
-        /// </summary>
-        /// <param name="usuario"></param>
-        /// <returns>O documento especificado da Collection</returns>
-        [HttpPost]
-        public virtual async Task<IActionResult> Login([FromBody]  Usuario usuario)
-        {
-            var documento = await Context.Find(x => x.Id == usuario.Id && x.Password == usuario.Password).FirstOrDefaultAsync();
 
-            if (documento == null)
-            {
-                return new NotFoundResult();
-            }
-
-            return new AcceptedResult("Get", documento);
-        }
     }
 }
