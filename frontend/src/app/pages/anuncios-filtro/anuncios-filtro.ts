@@ -10,7 +10,7 @@ import { ConferenceData } from '../../providers/conference-data';
 export class TelaAnunciosFiltro implements AfterViewInit {
   ios: boolean;
 
-  tracks: {name: string, icon: string, isChecked: boolean}[] = [];
+  tracks: { name: string, icon: string, isChecked: boolean }[] = [];
 
   constructor(
     public confData: ConferenceData,

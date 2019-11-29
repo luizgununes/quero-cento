@@ -49,15 +49,6 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'sobre',
-        children: [
-          {
-            path: '',
-            loadChildren: () => import('../sobre/sobre.module').then(m => m.SobreModule)
-          }
-        ]
-      },
-      {
         path: '',
         redirectTo: '/app/abas/anuncios',
         pathMatch: 'full'

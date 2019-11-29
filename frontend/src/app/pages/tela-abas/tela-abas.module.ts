@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { TelaAbas } from './tela-abas';
 import { TelaAbasRoutingModule } from './tela-abas-routing.module';
-import { SobreModule } from '../sobre/sobre.module';
 import { MapaModule } from '../mapa/mapa.module';
 import { AnunciosModule } from '../anuncios/anuncios.module';
 import { DetalheAnuncioModule } from '../anuncio-detalhe/anuncio-detalhe.module';
@@ -12,7 +11,6 @@ import { ListaComercianteModule } from '../lista-comerciante/lista-comerciante.m
 
 @NgModule({
   imports: [
-    SobreModule,
     CommonModule,
     IonicModule,
     MapaModule,
@@ -23,7 +21,7 @@ import { ListaComercianteModule } from '../lista-comerciante/lista-comerciante.m
     TelaAbasRoutingModule
   ],
   declarations: [
-    TelaAbas,
+    TelaAbas
   ]
 })
 export class AbasModule { }

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { ActionSheetController } from '@ionic/angular';
 import { ConferenceData } from '../../providers/conference-data';
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
 
 @Component({
   selector: 'tela-lista-comerciante',
@@ -16,8 +18,9 @@ export class TelaListaComerciante {
     public actionSheetCtrl: ActionSheetController,
     public confData: ConferenceData,
     public inAppBrowser: InAppBrowser,
-    public router: Router
-  ) { }
+    public router: Router,
+    public callNumber: CallNumber
+    ) { }
 
   ionViewDidEnter() {
     this.confData.getComerciantes().subscribe((comerciantes: any[]) => {
@@ -32,10 +35,12 @@ export class TelaListaComerciante {
       header: 'Ligar para ' + comerciante.nome,
       buttons: [
         {
-          text: `Ligar para ( ${comerciante.phone} )`,
-          icon: mode !== 'ios' ? 'call' : null,
+          text: `Ligar para ( ${comerciante.contato} )`,
+          icon: mode !== 'ios' ? 'call' : 'call',
           handler: () => {
-            window.open('tel:' + comerciante.phone);
+            this.callNumber.callNumber(comerciante.contato, true)
+            .then(res => console.log('Launched dialer!', res))
+            .catch(err => console.log('Error launching dialer', err));
           }
         }
       ]

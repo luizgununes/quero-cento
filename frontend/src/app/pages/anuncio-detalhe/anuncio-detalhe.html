@@ -9,6 +9,7 @@
 
 <ion-content>
   <div *ngIf="anuncio" class="ion-padding">
+    <ion-img id="fotoAnuncio" [src]="anuncio.foto"></ion-img>
     <h1>{{anuncio.nome}}</h1>
     <span *ngFor="let track of anuncio?.tracks" [class]="'anuncio-track-'+track.toLowerCase()">{{track}}</span>
     <p>{{anuncio.description}}</p>

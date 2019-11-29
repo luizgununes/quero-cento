@@ -29,11 +29,6 @@ export class AppComponent implements OnInit {
       title: 'Mapa',
       url: '/app/abas/mapa',
       icon: 'map'
-    },
-    {
-      title: 'Sobre',
-      url: '/app/abas/sobre',
-      icon: 'information-circle'
     }
   ];
   loggedIn = false;
@@ -66,7 +61,7 @@ export class AppComponent implements OnInit {
   }
 
   checkLoginStatus() {
-    return this.userData.estaLogado().then(loggedIn => {
+    return this.userData.loggedIn().then(loggedIn => {
       return this.updateLoggedInStatus(loggedIn);
     });
   }

@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { UserData } from '../../providers/user-data';
 import { UserOptions } from '../../interfaces/user-options';
 import { reject } from 'q';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'page-cadastro',
@@ -19,9 +20,18 @@ export class TelaCadastro {
   constructor(
     public router: Router,
     public userData: UserData,
-    public http: HttpClient
+    public http: HttpClient,
+    private readonly toastController: ToastController
   ) {
     console.log('');
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 3000
+    });
+    toast.present();
   }
 
   aoCadastrar() {
@@ -33,14 +43,15 @@ export class TelaCadastro {
 
       var dados = { "username": this.cadastro.username, "password": this.cadastro.password }
 
-      this.http.put('https://cors-anywhere.herokuapp.com/https://querocento.herokuapp.com/api/usuarios', dados)
+      // this.http.put('https://cors-anywhere.herokuapp.com/https://querocento.herokuapp.com/api/usuarios', dados)
+      this.http.put('http://qnotpgzdes049.quiver.local/querocento/api/usuarios', dados)
         .subscribe(data => {
           this.data = data
           resolve(this.data);
           this.router.navigateByUrl('/app/abas/anuncios');
         },
           (error) => {
-            reject(error.json());
+            this.presentToast('Erro!');
           });
     });
   }
