@@ -1,10 +1,9 @@
 {
-  "schedule": [
+  "anuncios": [
     {
-      "date": "2047-05-17",
       "groups": [
         {
-          "sessions": [
+          "anuncios": [
             {
               "id": "1",
               "nome": "Coxinha",
@@ -119,7 +118,7 @@
     {
       "id": "1",
       "nome": "Palmirinha",
-      "profilePic": "assets/img/comerciantes/palmirinha.png",
+      "fotoPerfil": "assets/img/comerciantes/palmirinha.png",
       "about": "Burt is a Bear.",
       "location": "Everywhere",
       "phone": "3226-1234"
@@ -127,7 +126,7 @@
     {
       "id": "2",
       "nome": "Rodrigo Hilbert",
-      "profilePic": "assets/img/comerciantes/rodrigo_hilbert.png",
+      "fotoPerfil": "assets/img/comerciantes/rodrigo_hilbert.png",
       "about": "Charlie is a Cheetah.",
       "location": "Everywhere",
       "phone": "99999-9999"
@@ -135,7 +134,7 @@
     {
       "id": "3",
       "nome": "Jacquin",
-      "profilePic": "assets/img/comerciantes/jacquin.png",
+      "fotoPerfil": "assets/img/comerciantes/jacquin.png",
       "about": "Donald is a Duck.",
       "location": "Everywhere",
       "phone": "99853-2213"
@@ -143,7 +142,7 @@
     {
       "id": "4",
       "nome": "Ana Maria Braga",
-      "profilePic": "assets/img/comerciantes/ana_maria.png",
+      "fotoPerfil": "assets/img/comerciantes/ana_maria.png",
       "about": "Eva is an Eagle.",
       "location": "Everywhere",
       "phone": "92377-8943"
@@ -151,7 +150,7 @@
     {
       "id": "5",
       "nome": "Edmilson",
-      "profilePic": "assets/img/comerciantes/edmilson.png",
+      "fotoPerfil": "assets/img/comerciantes/edmilson.png",
       "about": "Ellie is an Elephant.",
       "location": "Everywhere",
       "phone": "3226-7233"

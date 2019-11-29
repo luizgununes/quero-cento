@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DetalheComerciantePage } from './detalhe-comerciante';
-import { DetalheComerciantePageRoutingModule } from './detalhe-comerciante-routing.module';
+import { TelaDetalheComerciante } from './detalhe-comerciante';
+import { TelaDetalheComercianteRoutingModule } from './detalhe-comerciante-routing.module';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
-    DetalheComerciantePageRoutingModule
+    TelaDetalheComercianteRoutingModule
   ],
   declarations: [
-    DetalheComerciantePage,
+    TelaDetalheComerciante,
   ]
 })
 export class DetalheComercianteModule { }

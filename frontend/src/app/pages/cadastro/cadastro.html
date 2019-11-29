@@ -8,12 +8,11 @@
 </ion-header>
 
 <ion-content>
-
-  <div class="signup-logo">
-    <img src="assets/img/logo.png" alt="Ionic Logo">
+  <div class="cadastro-logo">
+    <img src="assets/img/logo.png">
   </div>
 
-  <form #signupForm="ngForm" novalidate>
+  <form #formularioCadastro="ngForm" novalidate>
     <ion-list>
       <ion-item>
         <ion-label position="stacked" color="primary">Nome de Usuário</ion-label>
@@ -39,7 +38,7 @@
     </ion-list>
 
     <div class="ion-padding">
-      <ion-button (click)="onSignup(signupForm)" type="submit" expand="block">Criar</ion-button>
+      <ion-button (click)="aoCadastrar(formularioCadastro)" type="submit" expand="block">Criar</ion-button>
     </div>
   </form>
 

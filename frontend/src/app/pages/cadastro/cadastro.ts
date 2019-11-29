@@ -2,9 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
 import { UserData } from '../../providers/user-data';
-
 import { UserOptions } from '../../interfaces/user-options';
 import { reject } from 'q';
 
@@ -13,7 +11,7 @@ import { reject } from 'q';
   templateUrl: 'cadastro.html',
   styleUrls: ['./cadastro.scss'],
 })
-export class CadastroPage {
+export class TelaCadastro {
   cadastro: UserOptions = { username: '', password: '' };
   submitted = false;
   data = undefined;
@@ -26,7 +24,7 @@ export class CadastroPage {
     console.log('');
   }
 
-  onSignup() {
+  aoCadastrar() {
     if (this.data) {
       return Promise.resolve(this.data);
     }
@@ -39,7 +37,7 @@ export class CadastroPage {
         .subscribe(data => {
           this.data = data
           resolve(this.data);
-          this.router.navigateByUrl('/app/tabs/schedule');
+          this.router.navigateByUrl('/app/abas/anuncios');
         },
           (error) => {
             reject(error.json());

@@ -25,19 +25,19 @@ export class ConferenceData {
   processData(data: any) {
     this.data = data;
 
-    this.data.schedule.forEach((day: any) => {
+    this.data.anuncios.forEach((day: any) => {
       day.groups.forEach((group: any) => {
-        group.sessions.forEach((session: any) => {
-          session.comerciantes = [];
-          if (session.comerciante) {
-            session.comerciante.forEach((comercianteNome: any) => {
+        group.anuncios.forEach((anuncio: any) => {
+          anuncio.comerciantes = [];
+          if (anuncio.comerciante) {
+            anuncio.comerciante.forEach((comercianteNome: any) => {
               const comerciante = this.data.comerciantes.find(
                 (s: any) => s.nome === comercianteNome
               );
               if (comerciante) {
-                session.comerciantes.push(comerciante);
-                comerciante.sessions = comerciante.sessions || [];
-                comerciante.sessions.push(session);
+                anuncio.comerciantes.push(comerciante);
+                comerciante.anuncios = comerciante.anuncios || [];
+                comerciante.anuncios.push(anuncio);
               }
             });
           }
@@ -56,8 +56,8 @@ export class ConferenceData {
   ) {
     return this.load().pipe(
       map((data: any) => {
-        const day = data.schedule[dayIndex];
-        day.shownSessions = 0;
+        const day = data.anuncios[dayIndex];
+        day.anunciosMostrados = 0;
 
         queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
         const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
@@ -65,12 +65,12 @@ export class ConferenceData {
         day.groups.forEach((group: any) => {
           group.hide = true;
 
-          group.sessions.forEach((session: any) => {
-            this.filterSession(session, queryWords, excludeTracks, segment);
+          group.anuncios.forEach((anuncio: any) => {
+            this.filtrarAnuncio(anuncio, queryWords, excludeTracks, segment);
 
-            if (!session.hide) {
+            if (!anuncio.hide) {
               group.hide = false;
-              day.shownSessions++;
+              day.anunciosMostrados++;
             }
           });
         });
@@ -80,8 +80,8 @@ export class ConferenceData {
     );
   }
 
-  filterSession(
-    session: any,
+  filtrarAnuncio(
+    anuncio: any,
     queryWords: string[],
     excludeTracks: any[],
     segment: string
@@ -89,7 +89,7 @@ export class ConferenceData {
     let matchesQueryText = false;
     if (queryWords.length) {
       queryWords.forEach((queryWord: string) => {
-        if (session.nome.toLowerCase().indexOf(queryWord) > -1) {
+        if (anuncio.nome.toLowerCase().indexOf(queryWord) > -1) {
           matchesQueryText = true;
         }
       });
@@ -98,7 +98,7 @@ export class ConferenceData {
     }
 
     let matchesTracks = false;
-    session.tracks.forEach((trackNome: string) => {
+    anuncio.tracks.forEach((trackNome: string) => {
       if (excludeTracks.indexOf(trackNome) === -1) {
         matchesTracks = true;
       }
@@ -106,7 +106,7 @@ export class ConferenceData {
 
     let matchesSegment = true;
 
-    session.hide = !(matchesQueryText && matchesTracks && matchesSegment);
+    anuncio.hide = !(matchesQueryText && matchesTracks && matchesSegment);
   }
 
   getComerciantes() {

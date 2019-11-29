@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
-import { ListaComerciantePage } from './lista-comerciante';
-import { ListaComerciantePageRoutingModule } from './lista-comerciante-routing.module';
+import { TelaListaComerciante } from './lista-comerciante';
+import { TelaListaComercianteRoutingModule } from './lista-comerciante-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
-    ListaComerciantePageRoutingModule
+    TelaListaComercianteRoutingModule
   ],
-  declarations: [ListaComerciantePage],
+  declarations: [TelaListaComerciante],
 })
 export class ListaComercianteModule { }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/app/tabs/comerciantes"></ion-back-button>
+      <ion-back-button defaultHref="/app/abas/comerciantes"></ion-back-button>
     </ion-buttons>
     <ion-title>{{comerciante?.nome}}</ion-title>
   </ion-toolbar>
@@ -9,7 +9,7 @@
 
 <ion-content class="ion-padding detalhe-comerciante">
   <div *ngIf="comerciante" class="ion-text-center">
-    <img [src]="comerciante.profilePic" [alt]="comerciante.nome">
+    <img [src]="comerciante.fotoPerfil">
     <br>
   </div>
 

@@ -14,9 +14,9 @@
         <ion-card class="comerciante-card">
           <ion-card-header>
             <ion-item detail="false" lines="none"
-              routerLink="/app/tabs/comerciantes/detalhes-comerciante/{{comerciante.id}}">
+              routerLink="/app/abas/comerciantes/detalhe-comerciante/{{comerciante.id}}">
               <ion-avatar slot="start">
-                <img [src]="comerciante.profilePic" [alt]="comerciante.nome + ' profile picture'">
+                <img [src]="comerciante.fotoPerfil" [alt]="comerciante.nome + ' perfil foto'">
               </ion-avatar>
               {{comerciante.nome}}
             </ion-item>
@@ -24,9 +24,9 @@
 
           <ion-card-content>
             <ion-list>
-              <ion-item *ngFor="let session of comerciante.sessions"
-                routerLink="/app/tabs/comerciantes/session/{{session.id}}">
-                <h3>{{session.nome}}</h3>
+              <ion-item *ngFor="let anuncio of comerciante.anuncios"
+                routerLink="/app/abas/comerciantes/anuncio/{{anuncio.id}}">
+                <h3>{{anuncio.nome}}</h3>
               </ion-item>
             </ion-list>
           </ion-card-content>

@@ -3,7 +3,6 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,12 +12,12 @@
     <img src="assets/img/logo.png">
   </div>
 
-  <form #loginForm="ngForm" novalidate>
+  <form #formularioLogin="ngForm" novalidate>
     <ion-list>
       <ion-item>
         <ion-label position="stacked" color="primary">Nome de Usuário</ion-label>
-        <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off"
-          required>
+        <ion-input [(ngModel)]="login.username" name="username" type="text" #username="ngModel" spellcheck="false"
+          autocapitalize="off" required>
         </ion-input>
       </ion-item>
 
@@ -43,10 +42,10 @@
 
     <ion-row id="botoesLogin">
       <ion-col>
-        <ion-button (click)="onLogin(loginForm)" type="submit" expand="block">Login</ion-button>
+        <ion-button (click)="aoLogar(formularioLogin)" type="submit" expand="block">Login</ion-button>
       </ion-col>
       <ion-col id="botaoCadastro">
-        <ion-button (click)="onSignup()" expand="block">Cadastro</ion-button>
+        <ion-button (click)="aoCadastrar()" expand="block">Cadastro</ion-button>
       </ion-col>
     </ion-row>
   </form>

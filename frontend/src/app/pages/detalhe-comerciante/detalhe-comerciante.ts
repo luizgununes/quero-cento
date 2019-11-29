@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConferenceData } from '../../providers/conference-data';
 
 @Component({
-  selector: 'page-detalhe-comerciante',
+  selector: 'tela-detalhe-comerciante',
   templateUrl: 'detalhe-comerciante.html',
   styleUrls: ['./detalhe-comerciante.scss'],
 })
-export class DetalheComerciantePage {
+export class TelaDetalheComerciante {
   comerciante: any;
 
   constructor(

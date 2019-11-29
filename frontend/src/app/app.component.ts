@@ -1,14 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
-
 import { Events, MenuController, Platform, ToastController } from '@ionic/angular';
-
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
 import { Storage } from '@ionic/storage';
-
 import { UserData } from './providers/user-data';
 
 @Component({
@@ -21,22 +17,22 @@ export class AppComponent implements OnInit {
   appPages = [
     {
       title: 'Anúncios',
-      url: '/app/tabs/anuncios',
+      url: '/app/abas/anuncios',
       icon: 'calendar'
     },
     {
       title: 'Comerciantes',
-      url: '/app/tabs/comerciantes',
+      url: '/app/abas/comerciantes',
       icon: 'contacts'
     },
     {
       title: 'Mapa',
-      url: '/app/tabs/mapa',
+      url: '/app/abas/mapa',
       icon: 'map'
     },
     {
       title: 'Sobre',
-      url: '/app/tabs/sobre',
+      url: '/app/abas/sobre',
       icon: 'information-circle'
     }
   ];
@@ -60,22 +56,6 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
     this.checkLoginStatus();
     this.listenForLoginEvents();
-
-    this.swUpdate.available.subscribe(async res => {
-      const toast = await this.toastCtrl.create({
-        message: 'Update available!',
-        showCloseButton: true,
-        position: 'bottom',
-        closeButtonText: `Reload`
-      });
-
-      await toast.present();
-
-      toast
-        .onDidDismiss()
-        .then(() => this.swUpdate.activateUpdate())
-        .then(() => window.location.reload());
-    });
   }
 
   initializeApp() {
@@ -86,7 +66,7 @@ export class AppComponent implements OnInit {
   }
 
   checkLoginStatus() {
-    return this.userData.isLoggedIn().then(loggedIn => {
+    return this.userData.estaLogado().then(loggedIn => {
       return this.updateLoggedInStatus(loggedIn);
     });
   }
@@ -113,13 +93,8 @@ export class AppComponent implements OnInit {
 
   sair() {
     this.userData.sair().then(() => {
-      return this.router.navigateByUrl('/app/tabs/schedule');
+      return this.router.navigateByUrl('/login');
     });
   }
 
-  openTutorial() {
-    this.menu.enable(false);
-    this.storage.set('ion_did_tutorial', false);
-    this.router.navigateByUrl('/tutorial');
-  }
 }

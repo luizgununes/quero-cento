@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TelaCadastro } from './cadastro';
+import { TelaPerfil } from './perfil';
 
 const routes: Routes = [
   {
     path: '',
-    component: TelaCadastro
+    component: TelaPerfil
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TelaCadastroRoutingModule { }
+export class TelaPerfilRoutingModule { }

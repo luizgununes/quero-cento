@@ -1,7 +1,7 @@
 import { Component, ElementRef, Inject, ViewChild, AfterViewInit } from '@angular/core';
 import { ConferenceData } from '../../providers/conference-data';
 import { Platform } from '@ionic/angular';
-import { DOCUMENT} from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'page-mapa',
@@ -14,7 +14,7 @@ export class MapaPage implements AfterViewInit {
   constructor(
     @Inject(DOCUMENT) private doc: Document,
     public confData: ConferenceData,
-    public platform: Platform) {}
+    public platform: Platform) { }
 
   async ngAfterViewInit() {
     const appEl = this.doc.querySelector('ion-app');
@@ -61,7 +61,7 @@ export class MapaPage implements AfterViewInit {
         if (mutation.attributeName === 'class') {
           const el = mutation.target as HTMLElement;
           if (map) {
-            map.setOptions({styles: []});
+            map.setOptions({ styles: [] });
           }
         }
       });
@@ -90,7 +90,7 @@ function getGoogleMaps(apiKey: string): Promise<any> {
       if (googleModule2 && googleModule2.maps) {
         resolve(googleModule2.maps);
       } else {
-        reject('google maps not available');
+        reject('erro');
       }
     };
   });

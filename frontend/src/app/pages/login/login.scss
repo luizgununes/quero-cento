@@ -1,15 +1,19 @@
 .login-logo {
   padding: 20px 0;
-  min-height: 100px;
+  min-height: 80px;
   text-align: center;
 }
 
 .login-logo img {
-  max-width: 250px;
+  max-width: 230px;
 }
 
 .list {
   margin-bottom: 0;
+}
+
+#botaoLogin {
+  background-color: red;
 }
 
 #acoesLogin {

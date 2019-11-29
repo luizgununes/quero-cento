@@ -4,12 +4,12 @@ import { TestBed, async } from '@angular/core/testing';
 import { ActionSheetController } from '@ionic/angular';
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { ListaComerciantePage } from './lista-comerciante';
+import { TelaListaComerciante } from './lista-comerciante';
 import { ConferenceData } from '../../providers/conference-data';
 
 const confDataSub = {};
 
-describe('ListaComerciantePage', () => {
+describe('TelaListaComerciante', () => {
   let fixture, app;
   beforeEach(async(() => {
     const actionSheetSpy = jasmine.createSpyObj('ActionSheetController', [
@@ -19,7 +19,7 @@ describe('ListaComerciantePage', () => {
     const iabSpy = jasmine.createSpyObj('InAppBrowser', ['create']);
 
     TestBed.configureTestingModule({
-      declarations: [ListaComerciantePage],
+      declarations: [TelaListaComerciante],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         { provide: ActionSheetController, useValue: actionSheetSpy },
@@ -30,7 +30,7 @@ describe('ListaComerciantePage', () => {
     }).compileComponents();
   }));
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListaComerciantePage);
+    fixture = TestBed.createComponent(TelaListaComerciante);
     app = fixture.debugElement.componentInstance;
   });
   it('should create the comerciante list page', () => {

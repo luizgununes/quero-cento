@@ -1,25 +1,3 @@
-/*
- * Ionic Variables and Theming
- * ----------------------------------------------------------------------------
- * For more information, please see
- * https://www.ionicframework.com/docs/theming/
- */
-
-/*
- * Ionic Colors
- * ----------------------------------------------------------------------------
- * Named colors make it easy to reuse colors on various components.
- * It's highly recommended to change the default colors
- * to match your app's branding. Ionic provides nine layered colors
- * that can be changed to theme an app. Additional colors can be
- * added as well (see below). For more information, please see
- * https://www.ionicframework.com/docs/theming/colors
- *
- * To easily create custom color palettes for your app’s UI,
- * check out our color generator:
- * https://www.ionicframework.com/docs/theming/color-generator
- */
-
  :root {
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -84,19 +62,6 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
-
-/*
- * Additional Ionic Colors
- * ----------------------------------------------------------------------------
- * In order to add colors to be used within Ionic components,
- * the color should be added as a class with the convention `.ion-color-{COLOR}`
- * where `{COLOR}` is the color to be used on the Ionic component.
- * For more information on adding new colors, please see
- * https://ionicframework.com/docs/theming/colors#adding-colors
- *
- * To generate the code for a new color, check out our new color creator:
- * https://ionicframework.com/docs/theming/colors#new-color-creator
- */
 
  :root {
   --ion-color-favorite: #69bb7b;
@@ -180,15 +145,6 @@
   --ion-color-tint: var(--ion-color-facebook-tint);
 }
 
-/*
- * Shared Variables
- * ----------------------------------------------------------------------------
- * To customize the look and feel of this app, you can override
- * the CSS variables found in Ionic's source files.
- * To view all of the possible Ionic variables, see:
- * https://ionicframework.com/docs/theming/css-variables#ionic-variables
- */
-
 :root {
   --ion-headings-font-weight: 300;
 
@@ -196,38 +152,13 @@
   --ion-color-doces: #3880ff;
 }
 
-/*
- * App iOS Variables
- * ----------------------------------------------------------------------------
- * iOS only CSS variables can go here
- */
-
 .ios {
 
 }
 
-/*
- * App Material Design Variables
- * ----------------------------------------------------------------------------
- * Material Design only CSS variables can go here
- */
-
 .md {
 
 }
-
-/*
- * App Theme
- * ----------------------------------------------------------------------------
- * Ionic apps can have different themes applied, which can
- * then be further customized. These variables come last
- * so that the above variables are used by default.
- */
-
-/*
- * Dark Theme
- * ----------------------------------------------------------------------------
- */
 
 .dark-theme {
   --ion-color-primary: #428cff;
@@ -294,11 +225,6 @@
   --ion-color-light-tint: #383a3e;
 }
 
-/*
- * iOS Dark Theme
- * ----------------------------------------------------------------------------
- */
-
 .dark-theme.ios {
   --ion-background-color: #000000;
   --ion-background-color-rgb: 0,0,0;
@@ -331,12 +257,6 @@
   --ion-item-background: #1c1c1c;
   --ion-item-background-activated: #313131;
 }
-
-
-/*
- * Material Design Dark Theme
- * ----------------------------------------------------------------------------
- */
 
 .dark-theme.md {
   --ion-background-color: #121212;

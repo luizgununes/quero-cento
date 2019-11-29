@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-
 import { ConferenceData } from '../../providers/conference-data';
 import { ActivatedRoute } from '@angular/router';
 import { UserData } from '../../providers/user-data';
 
 @Component({
-  selector: 'page-anuncio-detalhe',
+  selector: 'tela-anuncio-detalhe',
   styleUrls: ['./anuncio-detalhe.scss'],
   templateUrl: 'anuncio-detalhe.html'
 })
