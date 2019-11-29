@@ -19,6 +19,7 @@ namespace queroCento_BE
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_MyAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -86,6 +87,14 @@ namespace queroCento_BE
                 });
                 c.AddSecurityRequirement(security);
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                    });
+            });
 
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -108,7 +117,8 @@ namespace queroCento_BE
             else
             {
                 app.UseHsts();
-                app.UseCors("localhost:5000/api/usuarios"); 
+                app.UseCors(MyAllowSpecificOrigins); 
+            
             }
             // app.UseHttpsRedirection();
             app.UseMvc(routes =>

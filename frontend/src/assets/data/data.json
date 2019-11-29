@@ -1,0 +1,187 @@
+{
+  "anuncios": [
+    {
+      "groups": [
+        {
+          "anuncios": [
+            {
+              "id": "1",
+              "nome": "Coxinha",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Palmirinha"
+              ]
+            },
+            {
+              "id": "2",
+              "nome": "Pastel",
+              "preco": "R$ 40,00",
+              "cidade": "Carambeí",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
+            },
+            {
+              "id": "3",
+              "nome": "Brigadeiro",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/docao.png",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Ana Maria Braga"
+              ]
+            },
+            {
+              "id": "4",
+              "nome": "Bolinha de Queijo",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Edmilson"
+              ]
+            },
+            {
+              "id": "5",
+              "nome": "Beijinho",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Rodrigo Hilbert"
+              ]
+            },
+            {
+              "id": "6",
+              "nome": "Esfiha",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Palmirinha"
+              ]
+            },
+            {
+              "id": "7",
+              "nome": "Mini Pizza",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
+            },
+            {
+              "id": "8",
+              "nome": "Doce de Uva",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comerciantes": [
+    {
+      "id": "1",
+      "nome": "Palmirinha",
+      "fotoPerfil": "assets/img/comerciantes/palmirinha.png",
+      "about": "Burt is a Bear.",
+      "location": "Everywhere",
+      "phone": "3226-1234"
+    },
+    {
+      "id": "2",
+      "nome": "Rodrigo Hilbert",
+      "fotoPerfil": "assets/img/comerciantes/rodrigo_hilbert.png",
+      "about": "Charlie is a Cheetah.",
+      "location": "Everywhere",
+      "phone": "99999-9999"
+    },
+    {
+      "id": "3",
+      "nome": "Jacquin",
+      "fotoPerfil": "assets/img/comerciantes/jacquin.png",
+      "about": "Donald is a Duck.",
+      "location": "Everywhere",
+      "phone": "99853-2213"
+    },
+    {
+      "id": "4",
+      "nome": "Ana Maria Braga",
+      "fotoPerfil": "assets/img/comerciantes/ana_maria.png",
+      "about": "Eva is an Eagle.",
+      "location": "Everywhere",
+      "phone": "92377-8943"
+    },
+    {
+      "id": "5",
+      "nome": "Edmilson",
+      "fotoPerfil": "assets/img/comerciantes/edmilson.png",
+      "about": "Ellie is an Elephant.",
+      "location": "Everywhere",
+      "phone": "3226-7233"
+    }
+  ],
+  "map": [
+    {
+      "nome": "Pé de Fava",
+      "lat": -24.9491579,
+      "lng": -50.1186468,
+      "center": true
+    },
+    {
+      "nome": "Heroes Burger",
+      "lat": 43.074395,
+      "lng": -89.381056
+    },
+    {
+      "nome": "Alquimia",
+      "lat": 43.07336,
+      "lng": -89.38335
+    }
+  ],
+  "tracks": [
+    {
+      "nome": "Salgados",
+      "icon": "restaurant"
+    },
+    {
+      "nome": "Doces",
+      "icon": "logo-ionic"
+    }
+  ]
+}

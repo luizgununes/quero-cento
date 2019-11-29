@@ -1,8 +1,7 @@
 {
-  "name": "querocento",
+  "name": "ionic-conference-app",
+  "type": "angular",
   "integrations": {
     "cordova": {}
-  },
-  "type": "angular",
-  "id": "3fff720e"
+  }
 }

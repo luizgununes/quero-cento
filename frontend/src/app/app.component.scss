@@ -1,20 +1,6 @@
-:host {
-    ion-content {
-        --background: #6c4819;
-    }
-
-    ion-list {
-        &.list-md {
-            padding: 0;
-        }
-    }
-}
-
-#header-menu {
-    padding-bottom: 10px;
-}
-
-#avatar {
-    margin-left: 10px;
-    margin-right: 10px;
+.active {
+  color: var(--ion-color-primary);
+  ion-icon {
+    color: var(--ion-color-primary);
+  }
 }
