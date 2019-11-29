@@ -33,9 +33,9 @@ namespace queroCentoBE.Controllers
         /// <param name="usuario"></param>
         /// <returns>O documento especificado da Collection</returns>
         [HttpPost]
-        public virtual async Task<IActionResult> Login([FromBody]  Usuario usuario)
+        public virtual async Task<IActionResult> Login(Usuario usuario)
         {
-            var documento = await Context.Find(x => x.Id == usuario.Id && x.Password == usuario.Password).FirstOrDefaultAsync();
+            var documento = await Context.Find(x => x.Username == usuario.Username && x.Password == usuario.Password).FirstOrDefaultAsync();
 
             if (documento == null)
             {
