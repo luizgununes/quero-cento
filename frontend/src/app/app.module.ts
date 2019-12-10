@@ -1,41 +1,34 @@
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AuthModule } from  './auth/auth.module';
-
-import { AppComponent } from './app.component';
+import { IonicModule } from '@ionic/angular';
+import { IonicStorageModule } from '@ionic/storage';
+import { CallNumber } from '@ionic-native/call-number/ngx';
 import { AppRoutingModule } from './app-routing.module';
-
-import { ImagePageModule } from './pages/modal/image/image.module';
-import { SearchFilterPageModule } from './pages/modal/search-filter/search-filter.module';
-
-import { NotificationsComponent } from './components/notifications/notifications.component';
-
+import { AppComponent } from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NotificationsComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    ImagePageModule,
-    SearchFilterPageModule
+    HttpModule,
+    FormsModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
-  entryComponents: [NotificationsComponent],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-  ],
+  declarations: [AppComponent],
+  providers: [InAppBrowser, SplashScreen, StatusBar, CallNumber],
   bootstrap: [AppComponent]
 })
-
 export class AppModule {}

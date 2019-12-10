@@ -6,14 +6,19 @@ describe('new App', () => {
   beforeEach(() => {
     page = new AppPage();
   });
-  describe('default screen', () => {
-    beforeEach(() => {
-      page.navigateTo('/home');
-    });
-    it('should have a title saying Home', () => {
-      page.getPageOneTitleText().then(title => {
-        expect(title).toEqual('Home');
-      });
-    });
+
+  it('should display the menu', () => {
+    page.navigateTo();
+    expect(page.getMenu()).toBeTruthy();
+  });
+  fit('should get the slides text', () => {
+    page.navigateTo();
+    expect(page.getFirstSlide()).toBe('ION-SLIDE');
+    // console.log(page.getFirstSlide());
+  });
+
+  it('should create a router outlet', () => {
+    page.navigateTo();
+    expect(page.getRouter()).toBeTruthy();
   });
 });
