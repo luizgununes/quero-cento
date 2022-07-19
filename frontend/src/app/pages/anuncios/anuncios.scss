@@ -1,0 +1,12 @@
+$categories: (
+  ionic: var(--ion-color-primary),
+  salgados: #fd8b2d,
+  doces: #3880ff
+);
+
+@each $track, $value in map-remove($categories) {
+  ion-item-sliding[track='#{$track}'] ion-label {
+    border-left: 2px solid $value;
+    padding-left: 10px;
+  }
+}

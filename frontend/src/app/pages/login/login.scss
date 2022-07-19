@@ -1,0 +1,32 @@
+.login-logo {
+  padding: 20px 0;
+  min-height: 80px;
+  text-align: center;
+}
+
+.login-logo img {
+  max-width: 230px;
+}
+
+.list {
+  margin-bottom: 0;
+}
+
+#botaoLogin {
+  background-color: red;
+}
+
+#acoesLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#botoesLogin {
+  flex-direction: column;
+}
+
+#botaoCadastro {
+  margin-top: 50px;
+}

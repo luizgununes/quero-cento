@@ -1,0 +1,194 @@
+{
+  "anuncios": [
+    {
+      "groups": [
+        {
+          "anuncios": [
+            {
+              "id": "1",
+              "nome": "Coxinha",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/coxinha.png",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Palmirinha"
+              ]
+            },
+            {
+              "id": "2",
+              "nome": "Pastel",
+              "preco": "R$ 40,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/pastel.png",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
+            },
+            {
+              "id": "3",
+              "nome": "Brigadeiro",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/brigadeiro.png",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Ana Maria Braga"
+              ]
+            },
+            {
+              "id": "4",
+              "nome": "Bolinha de Queijo",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/bolinha_de_queijo.png",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Edmilson"
+              ]
+            },
+            {
+              "id": "5",
+              "nome": "Beijinho",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/beijinho.png",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Rodrigo Hilbert"
+              ]
+            },
+            {
+              "id": "6",
+              "nome": "Esfiha",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/esfiha.png",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Palmirinha"
+              ]
+            },
+            {
+              "id": "7",
+              "nome": "Mini Pizza",
+              "preco": "R$ 45,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/mini_pizza.png",
+              "tracks": [
+                "Salgados"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
+            },
+            {
+              "id": "8",
+              "nome": "Cupcake",
+              "preco": "R$ 65,00",
+              "cidade": "Ponta Grossa",
+              "estado": "PR",
+              "foto": "../../../assets/img/anuncios/cupcake.png",
+              "tracks": [
+                "Doces"
+              ],
+              "comerciante": [
+                "Jacquin"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comerciantes": [
+    {
+      "id": "1",
+      "nome": "Palmirinha",
+      "fotoPerfil": "assets/img/comerciantes/palmirinha.png",
+      "sobre": "Não, eu não sou a sua vó.",
+      "localizacao": "Ponta Grossa, PR",
+      "contato": "3226-1234"
+    },
+    {
+      "id": "2",
+      "nome": "Rodrigo Hilbert",
+      "fotoPerfil": "assets/img/comerciantes/rodrigo_hilbert.png",
+      "sobre": "Sou lindo e cozinho bem, quer mais o que?",
+      "localizacao": "Ponta Grossa, PR",
+      "contato": "99999-9999"
+    },
+    {
+      "id": "3",
+      "nome": "Jacquin",
+      "fotoPerfil": "assets/img/comerciantes/jacquin.png",
+      "sobre": "Lhe falta tompero!",
+      "localizacao": "Ponta Grossa, PR",
+      "contato": "99853-2213"
+    },
+    {
+      "id": "4",
+      "nome": "Ana Maria Braga",
+      "fotoPerfil": "assets/img/comerciantes/ana_maria.png",
+      "sobre": "Acorda menina!",
+      "localizacao": "Ponta Grossa, PR",
+      "contato": "92377-8943"
+    },
+    {
+      "id": "5",
+      "nome": "Edmilson",
+      "fotoPerfil": "assets/img/comerciantes/edmilson.png",
+      "sobre": "Às vezes eu dou uma sumida mas sempre tô pela área aí.",
+      "localizacao": "Ponta Grossa, PR",
+      "contato": "3226-7233"
+    }
+  ],
+  "map": [
+    {
+      "nome": "Pé de Fava",
+      "lat": -24.9491579,
+      "lng": -50.1186468,
+      "center": true
+    },
+    {
+      "nome": "Heroes Burger",
+      "lat": 43.074395,
+      "lng": -89.381056
+    },
+    {
+      "nome": "Alquimia",
+      "lat": 43.07336,
+      "lng": -89.38335
+    }
+  ],
+  "tracks": [
+    {
+      "nome": "Salgados",
+      "icon": "restaurant"
+    },
+    {
+      "nome": "Doces",
+      "icon": "logo-ionic"
+    }
+  ]
+}

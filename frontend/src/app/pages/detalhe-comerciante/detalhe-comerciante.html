@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/app/abas/comerciantes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{comerciante?.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding detalhe-comerciante">
+  <div *ngIf="comerciante" class="ion-text-center">
+    <img [src]="comerciante.fotoPerfil">
+    <br>
+    <p>"{{comerciante?.sobre}}"</p>
+    <p><b>Atua em:</b> {{comerciante?.localizacao}}</p>
+    <p><b>Contato:</b> {{comerciante?.contato}}</p>
+    <ion-card-content>
+      <ion-list>
+          <p><b>Meus Anúncios</b></p>
+          <ion-item *ngFor="let anuncio of comerciante.anuncios"
+            routerLink="/app/abas/comerciantes/anuncio/{{anuncio.id}}">
+            <h3>{{anuncio.nome}}</h3>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+  </div>
+</ion-content>

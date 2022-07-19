@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{anuncio?.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="anuncio" class="ion-padding">
+    <ion-img id="fotoAnuncio" [src]="anuncio.foto"></ion-img>
+    <h1>{{anuncio.nome}}</h1>
+    <span *ngFor="let track of anuncio?.tracks" [class]="'anuncio-track-'+track.toLowerCase()">{{track}}</span>
+    <p>{{anuncio.description}}</p>
+    <ion-text color="medium">
+      {{anuncio.preco}}
+      <br />
+      {{anuncio.cidade}} &ndash; {{anuncio.estado}}
+      <br /> {{anuncio.location}}
+    </ion-text>
+  </div>
+
+</ion-content>
